@@ -48,7 +48,12 @@ async function runVisualProofAgent() {
 
   console.log(`[Visual Agent] Loading extension from: ${extensionPath}`);
 
-  // 3. Launch Chromium with Extension
+  const chromeOficial = '/Users/pedrofelipealvesrocha/chrome/mac_arm-116.0.5793.0/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
+  const executablePath = fs.existsSync(chromeOficial) ? chromeOficial : undefined;
+  if (executablePath) {
+    console.log(`[Visual Agent] Using official Chrome for Testing: ${executablePath}`);
+  }
+
   const args = [
     `--disable-extensions-except=${extensionPath}`,
     `--load-extension=${extensionPath}`,
@@ -57,6 +62,7 @@ async function runVisualProofAgent() {
   ];
 
   const browserContext = await chromium.launchPersistentContext('', {
+    executablePath,
     headless: false, // headed inside display/xvfb
     args,
     viewport: { width: 1440, height: 900 }

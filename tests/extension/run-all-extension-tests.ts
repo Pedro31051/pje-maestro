@@ -22,7 +22,8 @@ async function runAllExtensionValidationSuites() {
   console.log('[Runner] Rebuilding extension...');
   execSync('npm run build', { cwd: rootDir, stdio: 'inherit' });
 
-  const xvfbCmd = 'xvfb-run -a -s "-screen 0 1440x900x24"';
+  const isMac = process.platform === 'darwin';
+  const xvfbCmd = isMac ? '' : 'xvfb-run -a -s "-screen 0 1440x900x24"';
 
   // 2. Run Spec 1: Inventory Controls
   console.log('\n[Runner] Executing Spec 1: Inventory Controls...');

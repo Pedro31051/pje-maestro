@@ -53,7 +53,14 @@ export class ExtensionRunnerHelper {
       '--disable-setuid-sandbox'
     ];
 
+    const chromeOficial = '/Users/pedrofelipealvesrocha/chrome/mac_arm-116.0.5793.0/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
+    const executablePath = fs.existsSync(chromeOficial) ? chromeOficial : undefined;
+    if (executablePath) {
+      console.log(`[Extension Test Helper] Using official Chrome for Testing: ${executablePath}`);
+    }
+
     this.context = await chromium.launchPersistentContext(profilePath, {
+      executablePath,
       headless: false, // headed inside Xvfb
       args,
       viewport
