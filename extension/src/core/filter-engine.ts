@@ -39,7 +39,7 @@ export function filterEngine(records: ProcessRecord[], filter: FilterCriteria): 
       if (currentStatus !== filter.statusFilter) return false;
     } else {
       // By default, hide 'oculto' unless explicitly selected
-      if (record.localMeta.status === 'oculto' && filter.statusFilter !== 'oculto') {
+      if (record.localMeta.status === 'oculto') {
         return false;
       }
     }

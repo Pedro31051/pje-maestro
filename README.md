@@ -30,12 +30,23 @@ npm install
 npm run build
 ```
 
-### 3. Rodar Testes Unitários e DOM da Extensão
+### 3. Instalar no Chrome
+
+1. Abra `chrome://extensions` e habilite o **Modo do desenvolvedor**.
+2. Clique em **Carregar sem compactação**.
+3. Selecione a pasta `extension/dist` gerada pelo build.
+4. Fixe o PJe Maestro na barra do Chrome e clique no ícone para abrir o popup.
+
+Se uma versão anterior já estiver carregada, clique em **Recarregar** no card
+da extensão. Caso o popup ainda não apareça, remova a instalação antiga e
+carregue novamente a pasta `extension/dist`.
+
+### 4. Rodar Testes Unitários e DOM da Extensão
 ```bash
 npm run test
 ```
 
-### 4. Executar o Visual Proof Agent (Com visualização e geração de prints)
+### 5. Executar o Visual Proof Agent (Com visualização e geração de prints)
 ```bash
 npm run test:visual
 ```

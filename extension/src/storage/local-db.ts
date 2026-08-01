@@ -26,10 +26,15 @@ export async function getLocalMetadataStore(): Promise<Record<string, LocalMetad
     return data.metadataStore || {};
   }
   const raw = localStorage.getItem('pje_maestro_metadataStore');
-  return raw ? JSON.parse(raw) : {};
+  if (!raw) return {};
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return {};
+  }
 }
 
-export async function saveLocalMetadata(idOrCNJ: string, meta: Partial<LocalMetadata>): Promise<void> {
+export async function persistLocalMetadata(idOrCNJ: string, meta: Partial<LocalMetadata>): Promise<void> {
   const store = await getLocalMetadataStore();
   const current = store[idOrCNJ] || {};
   const updated: LocalMetadata = { ...current, ...meta };
@@ -40,4 +45,13 @@ export async function saveLocalMetadata(idOrCNJ: string, meta: Partial<LocalMeta
   } else {
     localStorage.setItem('pje_maestro_metadataStore', JSON.stringify(store));
   }
+}
+
+export async function saveLocalMetadata(idOrCNJ: string, meta: Partial<LocalMetadata>): Promise<void> {
+  if (typeof chrome !== 'undefined' && chrome.runtime?.sendMessage) {
+    const response = await chrome.runtime.sendMessage({ type: 'SAVE_LOCAL_METADATA', idOrCNJ, meta });
+    if (!response?.ok) throw new Error(response?.error || 'Não foi possível salvar os metadados locais.');
+    return;
+  }
+  await persistLocalMetadata(idOrCNJ, meta);
 }

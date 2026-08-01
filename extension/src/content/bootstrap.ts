@@ -4,8 +4,7 @@ import { isTopWindow } from './frame-detector';
 import { getLocalMetadataStore } from '../storage/local-db';
 import { renderToolbar } from '../ui/toolbar';
 import { renderQueuePanel } from '../ui/queue-panel';
-import { showNoteModal } from '../ui/modals';
-import { injectRowBadges } from '../ui/badges';
+import { applyRecordVisibility, injectRowBadges } from '../ui/badges';
 import { executeVisualReorder } from '../actions/visual-reorder';
 import { executeRestoreOrder } from '../actions/restore-order';
 import { executeOpenNext } from '../actions/open-next';
@@ -17,6 +16,7 @@ import { ProcessRecord } from '../core/process-record';
 let activeRecords: ProcessRecord[] = [];
 let currentFilter: FilterCriteria = {};
 let queueToggleFn: (() => void) | null = null;
+let refreshRevision = 0;
 
 async function initPJeMaestro() {
   console.log(`[PJe Maestro] Initializing extension content script (topWindow: ${isTopWindow()})...`);
@@ -35,29 +35,29 @@ async function initPJeMaestro() {
   console.log(`[PJe Maestro] Adapter matched: ${adapter.name}`);
 
   const refreshUI = async () => {
+    const revision = ++refreshRevision;
     const localStore = await getLocalMetadataStore();
+    if (revision !== refreshRevision) return;
     activeRecords = adapter.extractRecords(document, localStore);
 
     console.log(`[PJe Maestro] Extracted ${activeRecords.length} records.`);
-    if (activeRecords.length === 0) return;
-
     // Apply active filter
     const filteredRecords = filterEngine(activeRecords, currentFilter);
 
-    // Inject row badges
-    injectRowBadges(filteredRecords);
+    // Keep every row decorated and reflect filters in the original PJe list.
+    injectRowBadges(activeRecords);
+    applyRecordVisibility(activeRecords, filteredRecords);
 
     // Render / update queue panel
     const { toggle } = renderQueuePanel(
       filteredRecords,
+      currentFilter,
       (query, statusFilter) => {
         currentFilter.query = query;
         currentFilter.statusFilter = statusFilter as any;
-        refreshUI();
+        void refreshUI();
       },
-      () => refreshUI(),
-      currentFilter.statusFilter || 'all',
-      currentFilter.query || ''
+      () => void refreshUI()
     );
     queueToggleFn = toggle;
   };
@@ -69,17 +69,17 @@ async function initPJeMaestro() {
     onReorder: () => {
       if (container) {
         executeVisualReorder(container, activeRecords);
-        refreshUI();
+        void refreshUI();
       }
     },
     onFilterVencidos: () => {
       currentFilter.deadlineFilter = currentFilter.deadlineFilter === 'vencidos' ? 'all' : 'vencidos';
-      refreshUI();
+      void refreshUI();
     },
     onRestore: () => {
       if (container) {
         executeRestoreOrder(container, activeRecords);
-        refreshUI();
+        void refreshUI();
       }
     },
     onOpenNext: () => {
@@ -102,10 +102,10 @@ async function initPJeMaestro() {
       console.log('[PJe Maestro] Message received in Content Script:', message);
       if (message.action === 'reorder' && container) {
         executeVisualReorder(container, activeRecords);
-        refreshUI();
+        void refreshUI();
       } else if (message.action === 'filter_vencidos') {
         currentFilter.deadlineFilter = currentFilter.deadlineFilter === 'vencidos' ? 'all' : 'vencidos';
-        refreshUI();
+        void refreshUI();
       } else if (message.action === 'open_next') {
         executeOpenNext(activeRecords);
       } else if (message.action === 'toggle_drawer' && queueToggleFn) {
@@ -121,7 +121,7 @@ async function initPJeMaestro() {
   if (container) {
     setupDOMObserver(container, () => {
       console.log('[PJe Maestro] DOM mutation detected, refreshing records...');
-      refreshUI();
+      void refreshUI();
     });
   }
 }

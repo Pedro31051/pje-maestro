@@ -7,6 +7,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnOptions = document.getElementById('btn-popup-options');
   const btnPing = document.getElementById('btn-ping-sw');
   const swStatus = document.getElementById('sw-status');
+  const totalStat = document.getElementById('stat-total');
+  const overdueStat = document.getElementById('stat-overdue');
+
+  const loadStats = async () => {
+    if (typeof chrome === 'undefined' || !chrome.storage?.local) return;
+
+    const { metadataStore = {} } = await chrome.storage.local.get('metadataStore');
+    const records = Object.values(metadataStore as Record<string, {
+      localDeadline?: string;
+      status?: string;
+    }>);
+    const today = new Date();
+    const todayKey = [
+      today.getFullYear(),
+      String(today.getMonth() + 1).padStart(2, '0'),
+      String(today.getDate()).padStart(2, '0')
+    ].join('-');
+    const overdue = records.filter(record =>
+      record.localDeadline &&
+      record.localDeadline < todayKey &&
+      record.status !== 'concluido' &&
+      record.status !== 'oculto'
+    ).length;
+
+    if (totalStat) totalStat.textContent = String(records.length);
+    if (overdueStat) overdueStat.textContent = String(overdue);
+  };
+
+  void loadStats();
 
   const sendToActiveTab = (action: string) => {
     if (typeof chrome !== 'undefined' && chrome.tabs) {
