@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>PJe - Cards Mock</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #f8fafc; padding: 20px; }
+    .lista-cards-tarefa { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .card-processo { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .card-tarefa-titulo { font-weight: bold; font-size: 14px; margin-bottom: 8px; color: #0f172a; }
+  </style>
+</head>
+<body>
+  <h2>Painel de Cards PJe</h2>
+  <div class="lista-cards-tarefa">
+    <div class="card-processo" data-cnj="0802222-11.2025.8.14.0028">
+      <div class="card-tarefa-titulo">Triagem Inicial</div>
+      <div>CNJ: 0802222-11.2025.8.14.0028</div>
+      <div><span class="badge-etiqueta">Fazenda Pública</span></div>
+    </div>
+    <div class="card-processo" data-cnj="0803333-22.2025.8.14.0028">
+      <div class="card-tarefa-titulo">Elaboração de Sentença</div>
+      <div>CNJ: 0803333-22.2025.8.14.0028</div>
+      <div><span class="badge-prioridade">URGENTE</span></div>
+    </div>
+  </div>
+</body>
+</html>

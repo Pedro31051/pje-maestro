@@ -1,0 +1,12 @@
+[
+  {
+    "step": 0,
+    "name": "pje-page-loaded",
+    "timestamp": "2026-08-01T02:44:55.067Z",
+    "urlSanitized": "http://127.0.0.1:49155/painel-tarefas-tabela.html",
+    "screenshot": "session_1785552290633/screenshots/000-pje-page-loaded.png",
+    "sha256": "94344053beea7d24c9f38b2b39e153fa74793576d5b37913e429bfe44abf1455",
+    "extensionVersion": "0.1.0",
+    "status": "ok"
+  }
+]

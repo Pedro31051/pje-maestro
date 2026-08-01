@@ -1,0 +1,22 @@
+[
+  {
+    "step": 0,
+    "name": "start",
+    "timestamp": "2026-08-01T02:44:29.746Z",
+    "urlSanitized": "about:blank",
+    "screenshot": "session_1785552265382/screenshots/000-start.png",
+    "sha256": "99db2a93b06fa1bf617f5c495e02dcf6c0b76961108491217e2cf4fed8699d35",
+    "extensionVersion": "0.1.0",
+    "status": "ok"
+  },
+  {
+    "step": 1,
+    "name": "pje-page-loaded",
+    "timestamp": "2026-08-01T02:44:30.882Z",
+    "urlSanitized": "http://127.0.0.1:49155/painel-tarefas-tabela.html",
+    "screenshot": "session_1785552265382/screenshots/001-pje-page-loaded.png",
+    "sha256": "94344053beea7d24c9f38b2b39e153fa74793576d5b37913e429bfe44abf1455",
+    "extensionVersion": "0.1.0",
+    "status": "ok"
+  }
+]

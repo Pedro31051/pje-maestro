@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>PJe - Painel de Tarefas (Tabela Mock)</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #f1f5f9; margin: 0; padding: 20px; color: #1e293b; }
+    header { background: #0f172a; color: #fff; padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+    th { background: #cbd5e1; font-weight: bold; }
+    tr:hover { background: #f8fafc; }
+    .badge-prioridade { background: #ef4444; color: white; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+    .badge-etiqueta { background: #3b82f6; color: white; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Tribunal de Justiça - PJe Painel de Tarefas</h2>
+  </header>
+  <main>
+    <div id="painel-tarefas">
+      <table class="tabela-tarefas">
+        <thead>
+          <tr>
+            <th>Processo CNJ</th>
+            <th>Tarefa Actual</th>
+            <th>Etiquetas</th>
+            <th>Tempo Parado</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="linha-processo" data-cnj="0801234-56.2025.8.14.0028">
+            <td>
+              <a href="#">0801234-56.2025.8.14.0028</a>
+              <span class="badge-prioridade">PRIORIDADE IDOSO</span>
+            </td>
+            <td class="nome-tarefa">Minuta de Despacho Liminar</td>
+            <td><span class="badge-etiqueta">Urgente</span></td>
+            <td>15 dias</td>
+            <td><button>Abrir</button></td>
+          </tr>
+          <tr class="linha-processo" data-cnj="0809876-43.2025.8.14.0028">
+            <td>
+              <a href="#">0809876-43.2025.8.14.0028</a>
+            </td>
+            <td class="nome-tarefa">Análise de Contestação</td>
+            <td><span class="badge-etiqueta">Cível</span></td>
+            <td>45 dias</td>
+            <td><button>Abrir</button></td>
+          </tr>
+          <tr class="linha-processo" data-cnj="0804321-88.2025.8.14.0028">
+            <td>
+              <a href="#">0804321-88.2025.8.14.0028</a>
+            </td>
+            <td class="nome-tarefa">Cumprimento de Sentença</td>
+            <td><span class="badge-etiqueta">Execução</span></td>
+            <td>2 dias</td>
+            <td><button>Abrir</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

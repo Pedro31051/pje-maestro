@@ -1,0 +1,22 @@
+{
+  "name": "pje-maestro-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PJe Maestro Chrome Extension & Linux Visual Proof Agent",
+  "workspaces": [
+    "extension",
+    "visual-agent"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=extension",
+    "test": "npm run test --workspace=extension",
+    "test:unit": "npm run test:unit --workspace=extension",
+    "test:dom": "npm run test:dom --workspace=extension",
+    "test:visual": "npm run test:visual --workspace=visual-agent",
+    "test:extension": "tsx tests/extension/run-all-extension-tests.ts",
+    "visual:live": "npm run visual:live --workspace=visual-agent",
+    "visual:headed": "npm run visual:headed --workspace=visual-agent",
+    "visual:xvfb": "npm run visual:xvfb --workspace=visual-agent",
+    "report": "npm run report --workspace=visual-agent"
+  }
+}

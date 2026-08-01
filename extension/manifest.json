@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "PJe Maestro",
+  "version": "0.1.0",
+  "description": "Camada visual para fila inteligente, prazos, filtros e tarefas locais no PJe.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "src/content/bootstrap.js"
+      ],
+      "css": [
+        "src/ui/styles.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["src/ui/styles.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_title": "PJe Maestro"
+  },
+  "options_page": "src/options/options.html"
+}
