@@ -45,6 +45,13 @@ export class ExtensionRunnerHelper {
 
     const extensionDist = path.resolve(__dirname, '../../../extension/dist');
     const profilePath = path.resolve(__dirname, '../../../scratch/test_chrome_profile');
+    if (fs.existsSync(profilePath)) {
+      try {
+        fs.rmSync(profilePath, { recursive: true, force: true });
+      } catch (e) {
+        // ignore if lock held briefly
+      }
+    }
 
     const args = [
       `--disable-extensions-except=${extensionDist}`,
