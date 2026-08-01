@@ -86,6 +86,27 @@ async function initPJeMaestro() {
 
   await refreshUI();
 
+  // Listen for messages from Extension Action Popup or Service Worker
+  if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.onMessage) {
+    chrome.runtime.onMessage.addListener((message) => {
+      console.log('[PJe Maestro] Message received in Content Script:', message);
+      if (message.action === 'reorder' && container) {
+        executeVisualReorder(container, activeRecords);
+        refreshUI();
+      } else if (message.action === 'filter_vencidos') {
+        currentFilter.deadlineFilter = currentFilter.deadlineFilter === 'vencidos' ? 'all' : 'vencidos';
+        refreshUI();
+      } else if (message.action === 'open_next') {
+        executeOpenNext(activeRecords);
+      } else if (message.action === 'toggle_drawer' && queueToggleFn) {
+        queueToggleFn();
+      } else if (message.action === 'export_csv') {
+        const csv = generateCSV(activeRecords);
+        downloadCSV(`pje_maestro_fila_${Date.now()}.csv`, csv);
+      }
+    });
+  }
+
   // Setup DOM observer for dynamic row additions
   if (container) {
     setupDOMObserver(container, () => {
@@ -94,6 +115,7 @@ async function initPJeMaestro() {
     });
   }
 }
+
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initPJeMaestro);

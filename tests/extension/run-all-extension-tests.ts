@@ -28,12 +28,16 @@ async function runAllExtensionValidationSuites() {
   console.log('\n[Runner] Executing Spec 1: Inventory Controls...');
   execSync(`${xvfbCmd} tsx tests/extension/specs/inventory-controls.spec.ts`, { cwd: rootDir, stdio: 'inherit' });
 
-  // 3. Run Spec 2: Negative & Robustness Tests
-  console.log('\n[Runner] Executing Spec 2: Negative Tests...');
+  // 3. Run Spec 2: Extension Action Popup UI
+  console.log('\n[Runner] Executing Spec 2: Extension Action Popup UI...');
+  execSync(`${xvfbCmd} tsx tests/extension/specs/action-popup-validation.spec.ts`, { cwd: rootDir, stdio: 'inherit' });
+
+  // 4. Run Spec 3: Negative & Robustness Tests
+  console.log('\n[Runner] Executing Spec 3: Negative Tests...');
   execSync(`${xvfbCmd} tsx tests/extension/specs/negative-tests.spec.ts`, { cwd: rootDir, stdio: 'inherit' });
 
-  // 4. Run Spec 3: Stability & Responsiveness
-  console.log('\n[Runner] Executing Spec 3: Stability Loops & Responsive Viewports...');
+  // 5. Run Spec 4: Stability Loops & Responsive Viewports...
+  console.log('\n[Runner] Executing Spec 4: Stability Loops & Responsive Viewports...');
   execSync(`${xvfbCmd} tsx tests/extension/specs/stability-loops.spec.ts`, { cwd: rootDir, stdio: 'inherit' });
 
   console.log('\n====================================================');

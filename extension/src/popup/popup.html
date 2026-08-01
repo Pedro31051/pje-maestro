@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PJe Maestro - Extension Popup</title>
+  <link rel="stylesheet" href="./popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <div class="brand">
+        <span class="logo">⚖️</span>
+        <div>
+          <h1 class="title">PJe Maestro</h1>
+          <span class="subtitle">Fila Inteligente & Produtividade</span>
+        </div>
+      </div>
+      <span class="status-badge" id="status-indicator">Ativo</span>
+    </header>
+
+    <main class="popup-body">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-value" id="stat-total">0</span>
+          <span class="stat-label">Processos</span>
+        </div>
+        <div class="stat-card warning">
+          <span class="stat-value" id="stat-overdue">0</span>
+          <span class="stat-label">Vencidos</span>
+        </div>
+      </div>
+
+      <div class="actions-grid">
+        <button class="action-btn primary" id="btn-popup-reorder">
+          <span class="icon">⚡</span> Reordenar Fila
+        </button>
+        <button class="action-btn warning" id="btn-popup-vencidos">
+          <span class="icon">🔥</span> Prazos Vencidos
+        </button>
+        <button class="action-btn success" id="btn-popup-next">
+          <span class="icon">⏭️</span> Próximo Processo
+        </button>
+        <button class="action-btn secondary" id="btn-popup-drawer">
+          <span class="icon">📋</span> Painel da Fila
+        </button>
+        <button class="action-btn secondary" id="btn-popup-csv">
+          <span class="icon">📥</span> Exportar CSV
+        </button>
+        <button class="action-btn outline" id="btn-popup-options">
+          <span class="icon">⚙️</span> Configurações
+        </button>
+      </div>
+    </main>
+
+    <footer class="popup-footer">
+      <span id="sw-status">Service Worker: Conectado</span>
+      <button id="btn-ping-sw" class="ping-btn">Ping SW</button>
+    </footer>
+  </div>
+  <script type="module" src="./popup.ts"></script>
+</body>
+</html>
+

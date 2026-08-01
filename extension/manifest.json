@@ -39,7 +39,8 @@
     }
   ],
   "action": {
-    "default_title": "PJe Maestro"
+    "default_title": "PJe Maestro",
+    "default_popup": "src/popup/popup.html"
   },
   "options_page": "src/options/options.html"
 }

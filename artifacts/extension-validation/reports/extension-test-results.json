@@ -4,125 +4,181 @@
     "controlName": "Injeção de Badges",
     "expectedAction": "Badges de score injetadas",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553436973-01-initial-load.png"
+    "evidenceScreenshot": "screenshots/1785553523488-01-initial-load.png"
   },
   {
     "id": "CTRL-TB-06",
     "controlName": "Painel Fila (#btn-drawer)",
     "expectedAction": "Abre a gaveta lateral",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553440052-02-drawer-open.png"
+    "evidenceScreenshot": "screenshots/1785553526522-02-drawer-open.png"
   },
   {
     "id": "CTRL-DW-02",
     "controlName": "Busca na Fila (#queue-search)",
     "expectedAction": "Filtra os cards por termo",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553440645-03-queue-search.png"
+    "evidenceScreenshot": "screenshots/1785553527109-03-queue-search.png"
   },
   {
     "id": "CTRL-DW-01",
     "controlName": "Fechar Gaveta (#btn-close-drawer)",
     "expectedAction": "Fecha a gaveta lateral",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553441255-04-drawer-closed.png"
+    "evidenceScreenshot": "screenshots/1785553527716-04-drawer-closed.png"
   },
   {
     "id": "CTRL-TB-02",
     "controlName": "Filtro Vencidos (#btn-vencidos)",
     "expectedAction": "Alterna filtro de processos vencidos",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553441847-05-filter-vencidos.png"
+    "evidenceScreenshot": "screenshots/1785553528304-05-filter-vencidos.png"
   },
   {
     "id": "CTRL-TB-01",
     "controlName": "Reordenar Fila (#btn-reorder)",
     "expectedAction": "Reordena elementos do DOM por pontuação",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553442426-06-reorder-fila.png"
+    "evidenceScreenshot": "screenshots/1785553528891-06-reorder-fila.png"
   },
   {
     "id": "CTRL-TB-03",
     "controlName": "Próximo Processo (#btn-next)",
     "expectedAction": "Destaca próximo processo com classe de highlight",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553443018-07-next-highlight.png"
+    "evidenceScreenshot": "screenshots/1785553529480-07-next-highlight.png"
   },
   {
     "id": "CTRL-TB-04",
     "controlName": "Restaurar Ordem (#btn-restore)",
     "expectedAction": "Restaura ordem original do DOM",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553443592-08-restore-order.png"
+    "evidenceScreenshot": "screenshots/1785553530055-08-restore-order.png"
   },
   {
     "id": "CTRL-TB-05",
     "controlName": "Exportar CSV (#btn-csv)",
     "expectedAction": "Dispara geração de arquivo CSV",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553444174-09-export-csv.png"
+    "evidenceScreenshot": "screenshots/1785553530639-09-export-csv.png"
   },
   {
     "id": "CTRL-OP-01",
     "controlName": "Limpar Logs (#btn-clear-logs)",
     "expectedAction": "Limpa logs de auditoria no storage",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553445185-10-options-cleared.png"
+    "evidenceScreenshot": "screenshots/1785553531633-10-options-cleared.png"
+  },
+  {
+    "id": "CTRL-POPUP-00",
+    "controlName": "Extensão - Clique no Ícone do Chrome",
+    "expectedAction": "Abre a interface Popup UI da extensão",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785553534720-popup-01-opened.png"
+  },
+  {
+    "id": "CTRL-POPUP-PING",
+    "controlName": "Popup - Ping Service Worker",
+    "expectedAction": "Recebe resposta PONG do SW",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785553537837-popup-02-sw-ping.png"
+  },
+  {
+    "id": "CTRL-POPUP-btn-popup-reorder",
+    "controlName": "Popup - Botão Reordenar Fila",
+    "expectedAction": "Clique executado sem erros",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785553538218-popup-btn-btn-popup-reorder.png"
+  },
+  {
+    "id": "CTRL-POPUP-btn-popup-vencidos",
+    "controlName": "Popup - Botão Prazos Vencidos",
+    "expectedAction": "Clique executado sem erros",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785553538593-popup-btn-btn-popup-vencidos.png"
+  },
+  {
+    "id": "CTRL-POPUP-btn-popup-next",
+    "controlName": "Popup - Botão Próximo Processo",
+    "expectedAction": "Clique executado sem erros",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785553538962-popup-btn-btn-popup-next.png"
+  },
+  {
+    "id": "CTRL-POPUP-btn-popup-drawer",
+    "controlName": "Popup - Botão Painel da Fila",
+    "expectedAction": "Clique executado sem erros",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785553539328-popup-btn-btn-popup-drawer.png"
+  },
+  {
+    "id": "CTRL-POPUP-btn-popup-csv",
+    "controlName": "Popup - Botão Exportar CSV",
+    "expectedAction": "Clique executado sem erros",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785553539712-popup-btn-btn-popup-csv.png"
+  },
+  {
+    "id": "CTRL-POPUP-btn-popup-options",
+    "controlName": "Popup - Botão Configurações",
+    "expectedAction": "Clique executado sem erros",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785553540124-popup-btn-btn-popup-options.png"
   },
   {
     "id": "NEG-01",
     "controlName": "Busca Sem Resultados",
     "expectedAction": "UI permanece íntegra sem lançar exceções",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553448150-neg-01-empty-query.png"
+    "evidenceScreenshot": "screenshots/1785553544969-neg-01-empty-query.png"
   },
   {
     "id": "NEG-02",
     "controlName": "Lista Vazia do PJe",
     "expectedAction": "Extensão inicializa graciosamente com lista vazia",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553451794-neg-02-empty-list.png"
+    "evidenceScreenshot": "screenshots/1785553547582-neg-02-empty-list.png"
   },
   {
     "id": "NEG-03",
     "controlName": "Cliques Múltiplos Rápidos",
     "expectedAction": "Sem duplicação de hosts ou estados corrompidos",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553452473-neg-03-rapid-clicks.png"
+    "evidenceScreenshot": "screenshots/1785553548254-neg-03-rapid-clicks.png"
   },
   {
     "id": "NEG-04",
     "controlName": "Suporte a IFrame Legado",
     "expectedAction": "Injeção segura sem quebrar frame pai",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553453573-neg-04-iframe-container.png"
+    "evidenceScreenshot": "screenshots/1785553549361-neg-04-iframe-container.png"
   },
   {
     "id": "RESP-1920",
     "controlName": "Responsividade (1080p Desktop)",
     "expectedAction": "UI renderizada sem estouros de tela",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553457430-responsive-1920x1080.png"
+    "evidenceScreenshot": "screenshots/1785553553192-responsive-1920x1080.png"
   },
   {
     "id": "RESP-1440",
     "controlName": "Responsividade (1440x900 Widescreen)",
     "expectedAction": "UI renderizada sem estouros de tela",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553461776-responsive-1440x900.png"
+    "evidenceScreenshot": "screenshots/1785553557703-responsive-1440x900.png"
   },
   {
     "id": "RESP-1280",
     "controlName": "Responsividade (1280x800 Laptop)",
     "expectedAction": "UI renderizada sem estouros de tela",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553466153-responsive-1280x800.png"
+    "evidenceScreenshot": "screenshots/1785553562105-responsive-1280x800.png"
   },
   {
     "id": "RESP-768",
     "controlName": "Responsividade (768x1024 Tablet)",
     "expectedAction": "UI renderizada sem estouros de tela",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553470633-responsive-768x1024.png"
+    "evidenceScreenshot": "screenshots/1785553566554-responsive-768x1024.png"
   }
 ]

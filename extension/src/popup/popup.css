@@ -1,0 +1,160 @@
+body {
+  width: 320px;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+}
+
+.popup-container {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.popup-header {
+  padding: 14px 16px;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #334155;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  font-size: 20px;
+}
+
+.title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #38bdf8;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.status-badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  font-weight: 600;
+}
+
+.popup-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-card.warning {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.stat-card.warning .stat-value {
+  color: #ef4444;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.action-btn {
+  background: #334155;
+  color: #f8fafc;
+  border: 1px solid #475569;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  background: #475569;
+  border-color: #64748b;
+}
+
+.action-btn.primary {
+  background: #0284c7;
+  border-color: #0369a1;
+}
+
+.action-btn.warning {
+  background: #d97706;
+  border-color: #b45309;
+}
+
+.action-btn.success {
+  background: #059669;
+  border-color: #047857;
+}
+
+.popup-footer {
+  padding: 10px 16px;
+  background: #1e293b;
+  border-top: 1px solid #334155;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.ping-btn {
+  background: #334155;
+  color: #38bdf8;
+  border: 1px solid #475569;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+}
