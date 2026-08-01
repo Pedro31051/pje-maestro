@@ -1,7 +1,10 @@
 import { resolveAdapter } from './pje-router';
+import { detectAndInspectIFrames } from '../adapters/pje-iframe-adapter';
+import { isTopWindow } from './frame-detector';
 import { getLocalMetadataStore } from '../storage/local-db';
 import { renderToolbar } from '../ui/toolbar';
 import { renderQueuePanel } from '../ui/queue-panel';
+import { showNoteModal } from '../ui/modals';
 import { injectRowBadges } from '../ui/badges';
 import { executeVisualReorder } from '../actions/visual-reorder';
 import { executeRestoreOrder } from '../actions/restore-order';
@@ -16,7 +19,12 @@ let currentFilter: FilterCriteria = {};
 let queueToggleFn: (() => void) | null = null;
 
 async function initPJeMaestro() {
-  console.log('[PJe Maestro] Initializing extension content script...');
+  console.log(`[PJe Maestro] Initializing extension content script (topWindow: ${isTopWindow()})...`);
+
+  const subFrames = detectAndInspectIFrames(document);
+  if (subFrames.length > 0) {
+    console.log(`[PJe Maestro] Detected and inspected ${subFrames.length} PJe frame(s).`);
+  }
 
   const adapter = resolveAdapter(document);
   if (!adapter) {
@@ -47,7 +55,9 @@ async function initPJeMaestro() {
         currentFilter.statusFilter = statusFilter as any;
         refreshUI();
       },
-      () => refreshUI()
+      () => refreshUI(),
+      currentFilter.statusFilter || 'all',
+      currentFilter.query || ''
     );
     queueToggleFn = toggle;
   };

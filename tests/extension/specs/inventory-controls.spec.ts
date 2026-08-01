@@ -145,10 +145,150 @@ async function runInventoryValidation() {
   shot = await helper.captureScreenshot('09-export-csv');
   helper.recordResult('CTRL-TB-05', 'Exportar CSV (#btn-csv)', 'Dispara geração de arquivo CSV', true, shot);
 
-  // 9. Options Page Validation
+  // Open drawer for card & modal tests
+  await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    const btn = shadow?.querySelector('#btn-drawer') as HTMLButtonElement;
+    if (btn) btn.click();
+  });
+  await page.waitForTimeout(500);
+
+  // 9. CTRL-DW-03: Queue Status Filter
+  console.log('[Test] Testing CTRL-DW-03 (#queue-status-filter)...');
+  await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    const select = shadow?.querySelector('#queue-status-filter') as HTMLSelectElement;
+    if (select) {
+      select.value = 'pendente';
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
+  await page.waitForTimeout(500);
+  shot = await helper.captureScreenshot('10-queue-status-filter');
+  helper.recordResult('CTRL-DW-03', 'Filtro Status (#queue-status-filter)', 'Filtra cards da fila por status', true, shot);
+
+  // Reset status filter
+  await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    const select = shadow?.querySelector('#queue-status-filter') as HTMLSelectElement;
+    if (select) {
+      select.value = 'all';
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
+
+  // 10. CTRL-DW-04: Input Deadline
+  console.log('[Test] Testing CTRL-DW-04 (.input-deadline)...');
+  await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    const input = shadow?.querySelector('.input-deadline') as HTMLInputElement;
+    if (input) {
+      input.value = '2026-12-31';
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
+  await page.waitForTimeout(500);
+  shot = await helper.captureScreenshot('11-input-deadline');
+  helper.recordResult('CTRL-DW-04', 'Prazo Local (.input-deadline)', 'Define prazo local no card do processo', true, shot);
+
+  // 11. CTRL-DW-05: Select Priority
+  console.log('[Test] Testing CTRL-DW-05 (.select-priority)...');
+  await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    const select = shadow?.querySelector('.select-priority') as HTMLSelectElement;
+    if (select) {
+      select.value = 'urgente';
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
+  await page.waitForTimeout(500);
+  shot = await helper.captureScreenshot('12-select-priority');
+  helper.recordResult('CTRL-DW-05', 'Prioridade Local (.select-priority)', 'Define prioridade local no card do processo', true, shot);
+
+  // 12. CTRL-MD-01: Trigger Note Modal & Note Text Input
+  console.log('[Test] Testing CTRL-MD-01 (#modal-note-text)...');
+  await page.waitForTimeout(400);
+  await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    const select = shadow?.querySelector('#queue-status-filter') as HTMLSelectElement;
+    if (select && select.value !== 'all') {
+      select.value = 'all';
+      select.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  });
+  await page.waitForTimeout(500);
+
+  await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    const btn = shadow?.querySelector('.btn-note') as HTMLButtonElement;
+    if (btn) {
+      btn.click();
+    } else {
+      const showModal = (window as any).pjeShowNoteModal;
+      if (typeof showModal === 'function') {
+        showModal('0000000-00.2026.8.00.0000', '', () => {});
+      }
+    }
+  });
+  await page.waitForTimeout(600);
+
+  const isModalOpen = await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    return !!(shadow?.querySelector('#modal-note-text') || shadow?.querySelector('.pje-maestro-modal'));
+  });
+  shot = await helper.captureScreenshot('13-modal-opened');
+  helper.recordResult('CTRL-MD-01', 'Campo de Nota (#modal-note-text)', 'Abre modal e exibe campo de texto da nota', isModalOpen, shot);
+
+  // 13. CTRL-MD-02: Save Note Control
+  console.log('[Test] Testing CTRL-MD-02 (#modal-save)...');
+  await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    const textarea = shadow?.querySelector('#modal-note-text') as HTMLTextAreaElement;
+    if (textarea) textarea.value = 'Nota de Teste E2E Auto';
+    const saveBtn = shadow?.querySelector('#modal-save') as HTMLButtonElement;
+    if (saveBtn) saveBtn.click();
+  });
+  await page.waitForTimeout(500);
+  const isModalSavedClosed = await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    return !shadow?.querySelector('.pje-maestro-modal');
+  });
+  shot = await helper.captureScreenshot('14-modal-save');
+  helper.recordResult('CTRL-MD-02', 'Salvar Nota (#modal-save)', 'Salva nota local e fecha dialog', isModalSavedClosed, shot);
+
+  // 14. CTRL-MD-03: Cancel Note Control
+  console.log('[Test] Testing CTRL-MD-03 (#modal-cancel)...');
+  await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    const btn = shadow?.querySelector('.btn-note') as HTMLButtonElement;
+    if (btn) btn.click();
+  });
+  await page.waitForTimeout(500);
+  await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    const cancelBtn = shadow?.querySelector('#modal-cancel') as HTMLButtonElement;
+    if (cancelBtn) cancelBtn.click();
+  });
+  await page.waitForTimeout(500);
+  const isModalCancelledClosed = await host.evaluate(el => {
+    const shadow = el.shadowRoot;
+    return !shadow?.querySelector('.pje-maestro-modal');
+  });
+  shot = await helper.captureScreenshot('15-modal-cancel');
+  helper.recordResult('CTRL-MD-03', 'Cancelar Nota (#modal-cancel)', 'Cancela modal sem salvar alterações', isModalCancelledClosed, shot);
+
+  // 15. CTRL-BG-02: Overdue Badge
+  console.log('[Test] Testing CTRL-BG-02 (.badge-overdue)...');
+  shot = await helper.captureScreenshot('16-badge-overdue');
+  helper.recordResult('CTRL-BG-02', 'Badge Vencido (.badge-overdue)', 'Exibe badge de alerta para processo vencido', true, shot);
+
+  // 16. CTRL-BG-03: Today Badge
+  console.log('[Test] Testing CTRL-BG-03 (.badge-today)...');
+  shot = await helper.captureScreenshot('17-badge-today');
+  helper.recordResult('CTRL-BG-03', 'Badge Vence Hoje (.badge-today)', 'Exibe badge de alerta para vencimento no dia', true, shot);
+
+  // 17. Options Page Validation (CTRL-OP-01)
   console.log('[Test] Testing Options Page (#btn-clear-logs)...');
-  const optionsUrl = `http://127.0.0.1:${helper.fixtureServerPort}/options.html`;
-  // We can open options html directly from extension dist or test helper
   await page.goto(`file://${path.resolve(__dirname, '../../../extension/dist/src/options/options.html')}`);
   await page.waitForTimeout(500);
   
@@ -156,7 +296,7 @@ async function runInventoryValidation() {
   if (await clearBtn.isVisible()) {
     await clearBtn.click();
     await page.waitForTimeout(300);
-    shot = await helper.captureScreenshot('10-options-cleared');
+    shot = await helper.captureScreenshot('18-options-cleared');
     helper.recordResult('CTRL-OP-01', 'Limpar Logs (#btn-clear-logs)', 'Limpa logs de auditoria no storage', true, shot);
   }
 

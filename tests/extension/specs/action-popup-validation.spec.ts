@@ -58,12 +58,12 @@ async function runActionPopupValidation() {
 
   // Test Buttons in Popup
   const popupButtons = [
-    { id: '#btn-popup-reorder', name: 'Reordenar Fila' },
-    { id: '#btn-popup-vencidos', name: 'Prazos Vencidos' },
-    { id: '#btn-popup-next', name: 'Próximo Processo' },
-    { id: '#btn-popup-drawer', name: 'Painel da Fila' },
-    { id: '#btn-popup-csv', name: 'Exportar CSV' },
-    { id: '#btn-popup-options', name: 'Configurações' }
+    { id: '#btn-popup-reorder', controlId: 'CTRL-POPUP-01', name: 'Reordenar Fila' },
+    { id: '#btn-popup-vencidos', controlId: 'CTRL-POPUP-02', name: 'Prazos Vencidos' },
+    { id: '#btn-popup-next', controlId: 'CTRL-POPUP-03', name: 'Próximo Processo' },
+    { id: '#btn-popup-drawer', controlId: 'CTRL-POPUP-04', name: 'Painel da Fila' },
+    { id: '#btn-popup-csv', controlId: 'CTRL-POPUP-05', name: 'Exportar CSV' },
+    { id: '#btn-popup-options', controlId: 'CTRL-POPUP-06', name: 'Configurações' }
   ];
 
   for (const btn of popupButtons) {
@@ -72,7 +72,7 @@ async function runActionPopupValidation() {
       await el.click();
       await page.waitForTimeout(300);
       shot = await helper.captureScreenshot(`popup-btn-${btn.id.replace('#', '')}`);
-      helper.recordResult(`CTRL-POPUP-${btn.id.replace('#', '')}`, `Popup - Botão ${btn.name}`, 'Clique executado sem erros', true, shot);
+      helper.recordResult(btn.controlId, `Popup - Botão ${btn.name}`, 'Clique executado sem erros', true, shot);
     }
   }
 

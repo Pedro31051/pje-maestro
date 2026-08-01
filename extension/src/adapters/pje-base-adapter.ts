@@ -8,6 +8,34 @@ export interface PJeAdapter {
   getContainer(document: Document): HTMLElement | null;
 }
 
+export function safeGetText(el: Element | null | undefined): string {
+  if (!el) return '';
+  const text = (el as HTMLElement).innerText || el.textContent || '';
+  return text.trim();
+}
+
+export function checkIsConfidential(el: HTMLElement): boolean {
+  if (
+    el.classList.contains('sigiloso') ||
+    el.classList.contains('processo-sigiloso') ||
+    el.classList.contains('badge-sigilo') ||
+    el.classList.contains('label-sigilo') ||
+    el.hasAttribute('data-sigilo') ||
+    el.getAttribute('data-sigilo') === 'true' ||
+    !!el.querySelector('.fa-lock, .icon-lock, [data-sigilo="true"], .sigiloso, .badge-sigilo')
+  ) {
+    return true;
+  }
+  const text = safeGetText(el).toLowerCase();
+  return /segredo de ju[sş]ti[çc]a|sigilo|processo sigiloso/i.test(text);
+}
+
+function generateDeterministicId(taskName: string, rawText: string, index: number): string {
+  const cleanSnippet = rawText.replace(/\s+/g, '').substring(0, 20);
+  const cleanTask = taskName.replace(/\s+/g, '').substring(0, 15);
+  return `non-cnj-${index}-${cleanTask || 'task'}-${cleanSnippet.length || 0}`;
+}
+
 export function buildRecordFromElement(
   el: HTMLElement,
   index: number,
@@ -19,7 +47,8 @@ export function buildRecordFromElement(
   currentURL: string,
   daysIdle?: number
 ): ProcessRecord {
-  const id = cnj || `elem-${index}-${Math.random().toString(36).substring(2, 7)}`;
+  const rawText = safeGetText(el);
+  const id = cnj || generateDeterministicId(taskName, rawText, index);
   const localMeta: LocalMetadata = localStore[id] || localStore[cnj || ''] || {};
 
   const record: ProcessRecord = {
@@ -28,11 +57,11 @@ export function buildRecordFromElement(
     taskName,
     tags,
     legalPriority,
-    rawText: el.innerText || '',
+    rawText,
     elementRef: el,
     originalIndex: index,
     currentURL,
-    isConfidential: el.classList.contains('sigiloso') || el.innerText.toLowerCase().includes('segredo de justiça'),
+    isConfidential: checkIsConfidential(el),
     daysIdle,
     localMeta,
     score: 0

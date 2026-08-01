@@ -2,6 +2,19 @@ import { ProcessRecord } from '../core/process-record';
 import { evaluateDeadline } from '../core/deadline-engine';
 
 export function injectRowBadges(records: ProcessRecord[]): void {
+  if (typeof document !== 'undefined' && document.head && !document.getElementById('pje-maestro-badge-styles')) {
+    const style = document.createElement('style');
+    style.id = 'pje-maestro-badge-styles';
+    style.textContent = `
+      .pje-maestro-badge-container { display: inline-flex; gap: 4px; margin-left: 6px; vertical-align: middle; }
+      .pje-maestro-badge { font-size: 11px; font-weight: 600; padding: 2px 6px; border-radius: 4px; color: #ffffff; font-family: system-ui, -apple-system, sans-serif; line-height: 1.2; display: inline-block; }
+      .pje-maestro-badge.badge-score { background-color: #3b82f6; }
+      .pje-maestro-badge.badge-overdue { background-color: #ef4444; }
+      .pje-maestro-badge.badge-today { background-color: #f59e0b; }
+    `;
+    document.head.appendChild(style);
+  }
+
   records.forEach(r => {
     if (!r.elementRef) return;
 

@@ -5,15 +5,15 @@ export function generateCSV(records: ProcessRecord[]): string {
   const headers = ['CNJ', 'Tarefa', 'Score', 'Prazo Local', 'Responsavel', 'Prioridade Legal', 'Prioridade Local', 'Status', 'Etiquetas'];
   
   const rows = records.map(r => {
-    const cnj = r.cnj || r.id;
-    const task = `"${(r.taskName || '').replace(/"/g, '""')}"`;
+    const cnj = r.isConfidential ? '[PROCESSO SIGILOSO]' : (r.cnj || r.id);
+    const task = r.isConfidential ? '"[CONTEUDO RESERVADO]"' : `"${(r.taskName || '').replace(/"/g, '""')}"`;
     const score = r.score;
     const deadline = r.localMeta.localDeadline || '';
-    const assignee = `"${(r.localMeta.assignee || '').replace(/"/g, '""')}"`;
+    const assignee = r.isConfidential ? '"[RESERVADO]"' : `"${(r.localMeta.assignee || '').replace(/"/g, '""')}"`;
     const legalPriority = r.legalPriority ? 'SIM' : 'NAO';
     const localPriority = r.localMeta.localPriority || 'normal';
     const status = r.localMeta.status || 'pendente';
-    const tags = `"${([...r.tags, ...(r.localMeta.tags || [])]).join('; ')}"`;
+    const tags = r.isConfidential ? '"[SIGILO]"' : `"${([...r.tags, ...(r.localMeta.tags || [])]).join('; ')}"`;
 
     return [cnj, task, score, deadline, assignee, legalPriority, localPriority, status, tags].join(',');
   });

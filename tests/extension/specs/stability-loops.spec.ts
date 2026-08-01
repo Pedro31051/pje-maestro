@@ -5,6 +5,15 @@ async function runStabilityAndResponsiveness() {
   console.log('🧪 Starting Stability Loops & Responsive Viewports Suite');
   console.log('----------------------------------------------------');
 
+  const helper = new ExtensionRunnerHelper();
+  await helper.setup({ width: 1440, height: 900 });
+  const page = helper.page!;
+
+  const fixtureUrl = `http://127.0.0.1:${helper.fixtureServerPort}/painel-tarefas-tabela.html`;
+  await page.goto(fixtureUrl, { waitUntil: 'domcontentloaded' });
+  await page.waitForSelector('#pje-maestro-host', { timeout: 15000 });
+  const host = page.locator('#pje-maestro-host');
+
   const viewports = [
     { width: 1920, height: 1080, name: '1080p Desktop' },
     { width: 1440, height: 900, name: '1440x900 Widescreen' },
@@ -14,16 +23,10 @@ async function runStabilityAndResponsiveness() {
 
   for (const vp of viewports) {
     console.log(`\n[Viewport Test] Testing viewport: ${vp.name} (${vp.width}x${vp.height})...`);
-    const helper = new ExtensionRunnerHelper();
-    await helper.setup({ width: vp.width, height: vp.height });
-    const page = helper.page!;
+    await page.setViewportSize({ width: vp.width, height: vp.height });
+    await page.waitForTimeout(300);
 
-    const fixtureUrl = `http://127.0.0.1:${helper.fixtureServerPort}/painel-tarefas-tabela.html`;
-    await page.goto(fixtureUrl, { waitUntil: 'domcontentloaded' });
-    await page.waitForSelector('#pje-maestro-host', { timeout: 15000 });
-    const host = page.locator('#pje-maestro-host');
-
-    // 10 Loop Cycles of Main Flow
+    // 5 Loop Cycles of Main Flow
     for (let cycle = 1; cycle <= 5; cycle++) {
       // Toggle drawer
       await host.evaluate(el => {
@@ -49,10 +52,9 @@ async function runStabilityAndResponsiveness() {
 
     const shot = await helper.captureScreenshot(`responsive-${vp.width}x${vp.height}`);
     helper.recordResult(`RESP-${vp.width}`, `Responsividade (${vp.name})`, 'UI renderizada sem estouros de tela', true, shot);
-
-    await helper.teardown();
   }
 
+  await helper.teardown();
   console.log('✅ Stability Loops & Responsive Viewports Suite completed successfully.');
 }
 

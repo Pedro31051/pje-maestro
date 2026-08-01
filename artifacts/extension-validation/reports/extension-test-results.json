@@ -4,181 +4,2681 @@
     "controlName": "Injeção de Badges",
     "expectedAction": "Badges de score injetadas",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553523488-01-initial-load.png"
+    "evidenceScreenshot": "screenshots/1785555483951-01-initial-load.png"
   },
   {
     "id": "CTRL-TB-06",
     "controlName": "Painel Fila (#btn-drawer)",
     "expectedAction": "Abre a gaveta lateral",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553526522-02-drawer-open.png"
+    "evidenceScreenshot": "screenshots/1785555484900-02-drawer-open.png"
   },
   {
     "id": "CTRL-DW-02",
     "controlName": "Busca na Fila (#queue-search)",
     "expectedAction": "Filtra os cards por termo",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553527109-03-queue-search.png"
+    "evidenceScreenshot": "screenshots/1785555485506-03-queue-search.png"
   },
   {
     "id": "CTRL-DW-01",
     "controlName": "Fechar Gaveta (#btn-close-drawer)",
     "expectedAction": "Fecha a gaveta lateral",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553527716-04-drawer-closed.png"
+    "evidenceScreenshot": "screenshots/1785555486115-04-drawer-closed.png"
   },
   {
     "id": "CTRL-TB-02",
     "controlName": "Filtro Vencidos (#btn-vencidos)",
     "expectedAction": "Alterna filtro de processos vencidos",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553528304-05-filter-vencidos.png"
+    "evidenceScreenshot": "screenshots/1785555486689-05-filter-vencidos.png"
   },
   {
     "id": "CTRL-TB-01",
     "controlName": "Reordenar Fila (#btn-reorder)",
     "expectedAction": "Reordena elementos do DOM por pontuação",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553528891-06-reorder-fila.png"
+    "evidenceScreenshot": "screenshots/1785555487271-06-reorder-fila.png"
   },
   {
     "id": "CTRL-TB-03",
     "controlName": "Próximo Processo (#btn-next)",
     "expectedAction": "Destaca próximo processo com classe de highlight",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553529480-07-next-highlight.png"
+    "evidenceScreenshot": "screenshots/1785555487863-07-next-highlight.png"
   },
   {
     "id": "CTRL-TB-04",
     "controlName": "Restaurar Ordem (#btn-restore)",
     "expectedAction": "Restaura ordem original do DOM",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553530055-08-restore-order.png"
+    "evidenceScreenshot": "screenshots/1785555488435-08-restore-order.png"
   },
   {
     "id": "CTRL-TB-05",
     "controlName": "Exportar CSV (#btn-csv)",
     "expectedAction": "Dispara geração de arquivo CSV",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553530639-09-export-csv.png"
+    "evidenceScreenshot": "screenshots/1785555489007-09-export-csv.png"
+  },
+  {
+    "id": "CTRL-DW-03",
+    "controlName": "Filtro Status (#queue-status-filter)",
+    "expectedAction": "Filtra cards da fila por status",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555490117-10-queue-status-filter.png"
+  },
+  {
+    "id": "CTRL-DW-04",
+    "controlName": "Prazo Local (.input-deadline)",
+    "expectedAction": "Define prazo local no card do processo",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555490695-11-input-deadline.png"
+  },
+  {
+    "id": "CTRL-DW-05",
+    "controlName": "Prioridade Local (.select-priority)",
+    "expectedAction": "Define prioridade local no card do processo",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555491270-12-select-priority.png"
+  },
+  {
+    "id": "CTRL-MD-01",
+    "controlName": "Campo de Nota (#modal-note-text)",
+    "expectedAction": "Abre modal e exibe campo de texto da nota",
+    "result": "FAILED",
+    "evidenceScreenshot": "screenshots/1785555492876-13-modal-opened.png"
+  },
+  {
+    "id": "CTRL-MD-02",
+    "controlName": "Salvar Nota (#modal-save)",
+    "expectedAction": "Salva nota local e fecha dialog",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555493462-14-modal-save.png"
+  },
+  {
+    "id": "CTRL-MD-03",
+    "controlName": "Cancelar Nota (#modal-cancel)",
+    "expectedAction": "Cancela modal sem salvar alterações",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555494565-15-modal-cancel.png"
+  },
+  {
+    "id": "CTRL-BG-02",
+    "controlName": "Badge Vencido (.badge-overdue)",
+    "expectedAction": "Exibe badge de alerta para processo vencido",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555494625-16-badge-overdue.png"
+  },
+  {
+    "id": "CTRL-BG-03",
+    "controlName": "Badge Vence Hoje (.badge-today)",
+    "expectedAction": "Exibe badge de alerta para vencimento no dia",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555494699-17-badge-today.png"
   },
   {
     "id": "CTRL-OP-01",
     "controlName": "Limpar Logs (#btn-clear-logs)",
     "expectedAction": "Limpa logs de auditoria no storage",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553531633-10-options-cleared.png"
+    "evidenceScreenshot": "screenshots/1785555495695-18-options-cleared.png"
   },
   {
     "id": "CTRL-POPUP-00",
     "controlName": "Extensão - Clique no Ícone do Chrome",
     "expectedAction": "Abre a interface Popup UI da extensão",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553534720-popup-01-opened.png"
+    "evidenceScreenshot": "screenshots/1785555498781-popup-01-opened.png"
   },
   {
     "id": "CTRL-POPUP-PING",
     "controlName": "Popup - Ping Service Worker",
     "expectedAction": "Recebe resposta PONG do SW",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553537837-popup-02-sw-ping.png"
+    "evidenceScreenshot": "screenshots/1785555500139-popup-02-sw-ping.png"
   },
   {
-    "id": "CTRL-POPUP-btn-popup-reorder",
+    "id": "CTRL-POPUP-01",
     "controlName": "Popup - Botão Reordenar Fila",
     "expectedAction": "Clique executado sem erros",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553538218-popup-btn-btn-popup-reorder.png"
+    "evidenceScreenshot": "screenshots/1785555500523-popup-btn-btn-popup-reorder.png"
   },
   {
-    "id": "CTRL-POPUP-btn-popup-vencidos",
+    "id": "CTRL-POPUP-02",
     "controlName": "Popup - Botão Prazos Vencidos",
     "expectedAction": "Clique executado sem erros",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553538593-popup-btn-btn-popup-vencidos.png"
+    "evidenceScreenshot": "screenshots/1785555500897-popup-btn-btn-popup-vencidos.png"
   },
   {
-    "id": "CTRL-POPUP-btn-popup-next",
+    "id": "CTRL-POPUP-03",
     "controlName": "Popup - Botão Próximo Processo",
     "expectedAction": "Clique executado sem erros",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553538962-popup-btn-btn-popup-next.png"
+    "evidenceScreenshot": "screenshots/1785555501264-popup-btn-btn-popup-next.png"
   },
   {
-    "id": "CTRL-POPUP-btn-popup-drawer",
+    "id": "CTRL-POPUP-04",
     "controlName": "Popup - Botão Painel da Fila",
     "expectedAction": "Clique executado sem erros",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553539328-popup-btn-btn-popup-drawer.png"
+    "evidenceScreenshot": "screenshots/1785555501631-popup-btn-btn-popup-drawer.png"
   },
   {
-    "id": "CTRL-POPUP-btn-popup-csv",
+    "id": "CTRL-POPUP-05",
     "controlName": "Popup - Botão Exportar CSV",
     "expectedAction": "Clique executado sem erros",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553539712-popup-btn-btn-popup-csv.png"
+    "evidenceScreenshot": "screenshots/1785555501998-popup-btn-btn-popup-csv.png"
   },
   {
-    "id": "CTRL-POPUP-btn-popup-options",
+    "id": "CTRL-POPUP-06",
     "controlName": "Popup - Botão Configurações",
     "expectedAction": "Clique executado sem erros",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553540124-popup-btn-btn-popup-options.png"
+    "evidenceScreenshot": "screenshots/1785555502395-popup-btn-btn-popup-options.png"
   },
   {
     "id": "NEG-01",
     "controlName": "Busca Sem Resultados",
     "expectedAction": "UI permanece íntegra sem lançar exceções",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553544969-neg-01-empty-query.png"
+    "evidenceScreenshot": "screenshots/1785555506534-neg-01-empty-query.png"
   },
   {
     "id": "NEG-02",
     "controlName": "Lista Vazia do PJe",
     "expectedAction": "Extensão inicializa graciosamente com lista vazia",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553547582-neg-02-empty-list.png"
+    "evidenceScreenshot": "screenshots/1785555508211-neg-02-empty-list.png"
   },
   {
     "id": "NEG-03",
     "controlName": "Cliques Múltiplos Rápidos",
     "expectedAction": "Sem duplicação de hosts ou estados corrompidos",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553548254-neg-03-rapid-clicks.png"
+    "evidenceScreenshot": "screenshots/1785555508861-neg-03-rapid-clicks.png"
   },
   {
     "id": "NEG-04",
     "controlName": "Suporte a IFrame Legado",
     "expectedAction": "Injeção segura sem quebrar frame pai",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553549361-neg-04-iframe-container.png"
+    "evidenceScreenshot": "screenshots/1785555509958-neg-04-iframe-container.png"
   },
   {
     "id": "RESP-1920",
     "controlName": "Responsividade (1080p Desktop)",
     "expectedAction": "UI renderizada sem estouros de tela",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553553192-responsive-1920x1080.png"
+    "evidenceScreenshot": "screenshots/1785555514626-responsive-1920x1080.png"
   },
   {
     "id": "RESP-1440",
     "controlName": "Responsividade (1440x900 Widescreen)",
     "expectedAction": "UI renderizada sem estouros de tela",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553557703-responsive-1440x900.png"
+    "evidenceScreenshot": "screenshots/1785555516670-responsive-1440x900.png"
   },
   {
     "id": "RESP-1280",
     "controlName": "Responsividade (1280x800 Laptop)",
     "expectedAction": "UI renderizada sem estouros de tela",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553562105-responsive-1280x800.png"
+    "evidenceScreenshot": "screenshots/1785555518670-responsive-1280x800.png"
   },
   {
     "id": "RESP-768",
     "controlName": "Responsividade (768x1024 Tablet)",
     "expectedAction": "UI renderizada sem estouros de tela",
     "result": "PASSED",
-    "evidenceScreenshot": "screenshots/1785553566554-responsive-768x1024.png"
+    "evidenceScreenshot": "screenshots/1785555520694-responsive-768x1024.png"
+  },
+  {
+    "id": "T1-01-1",
+    "controlName": "CTRL-TB-01",
+    "expectedAction": "Reorder button exists in DOM/ShadowDOM",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-01-2",
+    "controlName": "CTRL-TB-01",
+    "expectedAction": "Reorder text contains Reordenar Fila",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-01-3",
+    "controlName": "CTRL-TB-01",
+    "expectedAction": "Clicking reorder modifies top process row order",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-01-4",
+    "controlName": "CTRL-TB-01",
+    "expectedAction": "Reorder button remains enabled",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-01-5",
+    "controlName": "CTRL-TB-01",
+    "expectedAction": "Reorder screenshot evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555524807-t1-01-reorder.png"
+  },
+  {
+    "id": "T1-02-1",
+    "controlName": "CTRL-TB-02",
+    "expectedAction": "Vencidos button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-02-2",
+    "controlName": "CTRL-TB-02",
+    "expectedAction": "Vencidos text contains Vencidos",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-02-3",
+    "controlName": "CTRL-TB-02",
+    "expectedAction": "Clicking Vencidos toggles overdue filter",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-02-4",
+    "controlName": "CTRL-TB-02",
+    "expectedAction": "Clicking Vencidos again restores all items",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-02-5",
+    "controlName": "CTRL-TB-02",
+    "expectedAction": "Overdue filter screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555525490-t1-02-overdue.png"
+  },
+  {
+    "id": "T1-03-1",
+    "controlName": "CTRL-TB-03",
+    "expectedAction": "Next process button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-03-2",
+    "controlName": "CTRL-TB-03",
+    "expectedAction": "Next process button has btn-accent class",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-03-3",
+    "controlName": "CTRL-TB-03",
+    "expectedAction": "Clicking next triggers top process selection",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-03-4",
+    "controlName": "CTRL-TB-03",
+    "expectedAction": "Open next handles top process score item",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-03-5",
+    "controlName": "CTRL-TB-03",
+    "expectedAction": "Next process screenshot evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555525872-t1-03-next.png"
+  },
+  {
+    "id": "T1-04-1",
+    "controlName": "CTRL-TB-04",
+    "expectedAction": "Restore button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-04-2",
+    "controlName": "CTRL-TB-04",
+    "expectedAction": "Restore text contains Restaurar Ordem",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-04-3",
+    "controlName": "CTRL-TB-04",
+    "expectedAction": "Clicking restore resets process row order",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-04-4",
+    "controlName": "CTRL-TB-04",
+    "expectedAction": "Restored CNJ matches initial DOM order",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-04-5",
+    "controlName": "CTRL-TB-04",
+    "expectedAction": "Restore order screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555526256-t1-04-restore.png"
+  },
+  {
+    "id": "T1-05-1",
+    "controlName": "CTRL-TB-05",
+    "expectedAction": "CSV export button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-05-2",
+    "controlName": "CTRL-TB-05",
+    "expectedAction": "CSV text contains Exportar CSV",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-05-3",
+    "controlName": "CTRL-TB-05",
+    "expectedAction": "Clicking CSV triggers download payload",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-05-4",
+    "controlName": "CTRL-TB-05",
+    "expectedAction": "Generated CSV includes header CNJ,Score,Task",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-05-5",
+    "controlName": "CTRL-TB-05",
+    "expectedAction": "CSV export evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555526375-t1-05-csv.png"
+  },
+  {
+    "id": "T1-06-1",
+    "controlName": "CTRL-TB-06",
+    "expectedAction": "Drawer button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-06-2",
+    "controlName": "CTRL-TB-06",
+    "expectedAction": "Drawer text contains Painel Fila",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-06-3",
+    "controlName": "CTRL-TB-06",
+    "expectedAction": "Drawer receives open class after click",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-06-4",
+    "controlName": "CTRL-TB-06",
+    "expectedAction": "Drawer removes open class on second click",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-06-5",
+    "controlName": "CTRL-TB-06",
+    "expectedAction": "Drawer toggle evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555527074-t1-06-drawer-toggle.png"
+  },
+  {
+    "id": "T1-07-1",
+    "controlName": "CTRL-DW-01",
+    "expectedAction": "Close drawer button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-07-2",
+    "controlName": "CTRL-DW-01",
+    "expectedAction": "Close button contains symbol",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-07-3",
+    "controlName": "CTRL-DW-01",
+    "expectedAction": "Clicking close drawer hides drawer panel",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-07-4",
+    "controlName": "CTRL-DW-01",
+    "expectedAction": "Drawer open class removed",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-07-5",
+    "controlName": "CTRL-DW-01",
+    "expectedAction": "Close drawer evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555527752-t1-07-close-drawer.png"
+  },
+  {
+    "id": "T1-08-1",
+    "controlName": "CTRL-DW-02",
+    "expectedAction": "Queue search input element exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-08-2",
+    "controlName": "CTRL-DW-02",
+    "expectedAction": "Search input placeholder matches spec",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-08-3",
+    "controlName": "CTRL-DW-02",
+    "expectedAction": "Search filter displays matching cards",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-08-4",
+    "controlName": "CTRL-DW-02",
+    "expectedAction": "Clearing search input restores cards list",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-08-5",
+    "controlName": "CTRL-DW-02",
+    "expectedAction": "Search filter evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555528742-t1-08-search-filter.png"
+  },
+  {
+    "id": "T1-09-1",
+    "controlName": "CTRL-DW-03",
+    "expectedAction": "Queue status select filter exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-09-2",
+    "controlName": "CTRL-DW-03",
+    "expectedAction": "Status select contains all status options",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-09-3",
+    "controlName": "CTRL-DW-03",
+    "expectedAction": "Selecting status filters process records",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-09-4",
+    "controlName": "CTRL-DW-03",
+    "expectedAction": "Selecting all resets status filter",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-09-5",
+    "controlName": "CTRL-DW-03",
+    "expectedAction": "Status filter evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555529430-t1-09-status-filter.png"
+  },
+  {
+    "id": "T1-10-1",
+    "controlName": "CTRL-DW-04",
+    "expectedAction": "Card local deadline input exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-10-2",
+    "controlName": "CTRL-DW-04",
+    "expectedAction": "Deadline input type equals date",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-10-3",
+    "controlName": "CTRL-DW-04",
+    "expectedAction": "Modifying local deadline updates local storage",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-10-4",
+    "controlName": "CTRL-DW-04",
+    "expectedAction": "Updating deadline triggers score recalculation",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-10-5",
+    "controlName": "CTRL-DW-04",
+    "expectedAction": "Local deadline evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555529817-t1-10-deadline.png"
+  },
+  {
+    "id": "T1-11-1",
+    "controlName": "CTRL-DW-05",
+    "expectedAction": "Card priority select exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-11-2",
+    "controlName": "CTRL-DW-05",
+    "expectedAction": "Priority select contains 4 priority levels",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-11-3",
+    "controlName": "CTRL-DW-05",
+    "expectedAction": "Selecting urgente boosts process priority score",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-11-4",
+    "controlName": "CTRL-DW-05",
+    "expectedAction": "Priority selection persists to local metadata",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-11-5",
+    "controlName": "CTRL-DW-05",
+    "expectedAction": "Local priority evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555530208-t1-11-priority.png"
+  },
+  {
+    "id": "T1-12-1",
+    "controlName": "CTRL-MD-01",
+    "expectedAction": "Note modal element created in ShadowDOM",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-12-2",
+    "controlName": "CTRL-MD-01",
+    "expectedAction": "Textarea modal-note-text exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-12-3",
+    "controlName": "CTRL-MD-01",
+    "expectedAction": "Modal header contains CNJ number",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-12-4",
+    "controlName": "CTRL-MD-01",
+    "expectedAction": "Textarea contains typed initial note",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-12-5",
+    "controlName": "CTRL-MD-01",
+    "expectedAction": "Modal note input screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555530490-t1-12-modal-input.png"
+  },
+  {
+    "id": "T1-13-1",
+    "controlName": "CTRL-MD-02",
+    "expectedAction": "Modal save button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-13-2",
+    "controlName": "CTRL-MD-02",
+    "expectedAction": "Save button contains Salvar Nota",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-13-3",
+    "controlName": "CTRL-MD-02",
+    "expectedAction": "Saving note removes modal from DOM",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-13-4",
+    "controlName": "CTRL-MD-02",
+    "expectedAction": "Saved note callback fires cleanly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-13-5",
+    "controlName": "CTRL-MD-02",
+    "expectedAction": "Modal save screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555530774-t1-13-modal-save.png"
+  },
+  {
+    "id": "T1-14-1",
+    "controlName": "CTRL-MD-03",
+    "expectedAction": "Modal cancel button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-14-2",
+    "controlName": "CTRL-MD-03",
+    "expectedAction": "Cancel button label equals Cancelar",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-14-3",
+    "controlName": "CTRL-MD-03",
+    "expectedAction": "Clicking cancel removes modal without saving",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-14-4",
+    "controlName": "CTRL-MD-03",
+    "expectedAction": "Original note remains unmodified on cancel",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-14-5",
+    "controlName": "CTRL-MD-03",
+    "expectedAction": "Modal cancel screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555531261-t1-14-modal-cancel.png"
+  },
+  {
+    "id": "T1-15-1",
+    "controlName": "CTRL-OP-01",
+    "expectedAction": "Options page loaded and clear logs button visible",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-15-2",
+    "controlName": "CTRL-OP-01",
+    "expectedAction": "Clear logs button label correct",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-15-3",
+    "controlName": "CTRL-OP-01",
+    "expectedAction": "Clicking clear logs updates status element",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-15-4",
+    "controlName": "CTRL-OP-01",
+    "expectedAction": "Status message confirms audit logs cleared",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-15-5",
+    "controlName": "CTRL-OP-01",
+    "expectedAction": "Options clear logs evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555532251-t1-15-options-clear-logs.png"
+  },
+  {
+    "id": "T1-16-1",
+    "controlName": "CTRL-BG-01",
+    "expectedAction": "Row score badges injected into table rows",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-16-2",
+    "controlName": "CTRL-BG-01",
+    "expectedAction": "Badge text starts with PJe Maestro prefix",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-16-3",
+    "controlName": "CTRL-BG-01",
+    "expectedAction": "Numeric score value formatted properly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-16-4",
+    "controlName": "CTRL-BG-01",
+    "expectedAction": "Higher priority process features higher score",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-16-5",
+    "controlName": "CTRL-BG-01",
+    "expectedAction": "Score badge evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555533174-t1-16-score-badges.png"
+  },
+  {
+    "id": "T1-17-1",
+    "controlName": "CTRL-BG-02",
+    "expectedAction": "Overdue row badge element supported",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-17-2",
+    "controlName": "CTRL-BG-02",
+    "expectedAction": "Overdue badge applies warning highlight class",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-17-3",
+    "controlName": "CTRL-BG-02",
+    "expectedAction": "Days overdue calculation active",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-17-4",
+    "controlName": "CTRL-BG-02",
+    "expectedAction": "Non-overdue items omit overdue badge",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-17-5",
+    "controlName": "CTRL-BG-02",
+    "expectedAction": "Overdue badge screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555533454-t1-17-overdue-badge.png"
+  },
+  {
+    "id": "T1-18-1",
+    "controlName": "CTRL-BG-03",
+    "expectedAction": "Today deadline badge element supported",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-18-2",
+    "controlName": "CTRL-BG-03",
+    "expectedAction": "Today badge has proper CSS styling",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-18-3",
+    "controlName": "CTRL-BG-03",
+    "expectedAction": "Matches current date items",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-18-4",
+    "controlName": "CTRL-BG-03",
+    "expectedAction": "Integrates into process table row cell",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-18-5",
+    "controlName": "CTRL-BG-03",
+    "expectedAction": "Today badge evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555533733-t1-18-today-badge.png"
+  },
+  {
+    "id": "T1-19-1",
+    "controlName": "CTRL-POPUP-01",
+    "expectedAction": "Popup reorder button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-19-2",
+    "controlName": "CTRL-POPUP-01",
+    "expectedAction": "Popup reorder label contains Reordenar",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-19-3",
+    "controlName": "CTRL-POPUP-01",
+    "expectedAction": "Clicking popup reorder dispatches reorder message",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-19-4",
+    "controlName": "CTRL-POPUP-01",
+    "expectedAction": "Content script listener handles reorder action",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-19-5",
+    "controlName": "CTRL-POPUP-01",
+    "expectedAction": "Popup reorder screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555534396-t1-19-popup-reorder.png"
+  },
+  {
+    "id": "T1-20-1",
+    "controlName": "CTRL-POPUP-02",
+    "expectedAction": "Popup vencidos button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-20-2",
+    "controlName": "CTRL-POPUP-02",
+    "expectedAction": "Popup vencidos label contains Prazos Vencidos",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-20-3",
+    "controlName": "CTRL-POPUP-02",
+    "expectedAction": "Clicking popup vencidos sends filter_vencidos action",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-20-4",
+    "controlName": "CTRL-POPUP-02",
+    "expectedAction": "Target tab applies overdue filter",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-20-5",
+    "controlName": "CTRL-POPUP-02",
+    "expectedAction": "Popup overdue filter screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555534478-t1-20-popup-vencidos.png"
+  },
+  {
+    "id": "T1-21-1",
+    "controlName": "CTRL-POPUP-03",
+    "expectedAction": "Popup next process button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-21-2",
+    "controlName": "CTRL-POPUP-03",
+    "expectedAction": "Popup next label contains Próximo Processo",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-21-3",
+    "controlName": "CTRL-POPUP-03",
+    "expectedAction": "Clicking popup next sends open_next message",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-21-4",
+    "controlName": "CTRL-POPUP-03",
+    "expectedAction": "Active tab opens highest score process",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-21-5",
+    "controlName": "CTRL-POPUP-03",
+    "expectedAction": "Popup next process screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555534563-t1-21-popup-next.png"
+  },
+  {
+    "id": "T1-22-1",
+    "controlName": "CTRL-POPUP-04",
+    "expectedAction": "Popup drawer button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-22-2",
+    "controlName": "CTRL-POPUP-04",
+    "expectedAction": "Popup drawer label contains Painel da Fila",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-22-3",
+    "controlName": "CTRL-POPUP-04",
+    "expectedAction": "Clicking popup drawer sends toggle_drawer message",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-22-4",
+    "controlName": "CTRL-POPUP-04",
+    "expectedAction": "Content script toggles queue panel drawer",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-22-5",
+    "controlName": "CTRL-POPUP-04",
+    "expectedAction": "Popup toggle drawer screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555534633-t1-22-popup-drawer.png"
+  },
+  {
+    "id": "T1-23-1",
+    "controlName": "CTRL-POPUP-05",
+    "expectedAction": "Popup CSV export button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-23-2",
+    "controlName": "CTRL-POPUP-05",
+    "expectedAction": "Popup CSV label contains Exportar CSV",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-23-3",
+    "controlName": "CTRL-POPUP-05",
+    "expectedAction": "Clicking popup CSV sends export_csv action message",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-23-4",
+    "controlName": "CTRL-POPUP-05",
+    "expectedAction": "Content script generates queue CSV download",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-23-5",
+    "controlName": "CTRL-POPUP-05",
+    "expectedAction": "Popup CSV export screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555534694-t1-23-popup-csv.png"
+  },
+  {
+    "id": "T1-24-1",
+    "controlName": "CTRL-POPUP-06",
+    "expectedAction": "Popup options button exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-24-2",
+    "controlName": "CTRL-POPUP-06",
+    "expectedAction": "Popup options label contains Configurações",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-24-3",
+    "controlName": "CTRL-POPUP-06",
+    "expectedAction": "Options button triggers openOptionsPage",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-24-4",
+    "controlName": "CTRL-POPUP-06",
+    "expectedAction": "Options page target path resolves correctly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-24-5",
+    "controlName": "CTRL-POPUP-06",
+    "expectedAction": "Popup options screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555534747-t1-24-popup-options.png"
+  },
+  {
+    "id": "T1-25-1",
+    "controlName": "CTRL-POPUP-PING",
+    "expectedAction": "Ping SW button exists in popup footer",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-25-2",
+    "controlName": "CTRL-POPUP-PING",
+    "expectedAction": "Clicking ping SW updates sw-status element",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-25-3",
+    "controlName": "CTRL-POPUP-PING",
+    "expectedAction": "SW status confirms PING / PONG communication",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-25-4",
+    "controlName": "CTRL-POPUP-PING",
+    "expectedAction": "Message roundtrip latency under threshold",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-25-5",
+    "controlName": "CTRL-POPUP-PING",
+    "expectedAction": "Ping SW evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555535016-t1-25-popup-ping.png"
+  },
+  {
+    "id": "T1-26-1",
+    "controlName": "INFRA-26",
+    "expectedAction": "Xvfb display buffer active",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-26-2",
+    "controlName": "INFRA-26",
+    "expectedAction": "Viewport set to 1440x900 resolution",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-26-3",
+    "controlName": "INFRA-26",
+    "expectedAction": "Chromium launched with unpacked extension",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-26-4",
+    "controlName": "INFRA-26",
+    "expectedAction": "Service worker initialized in headed browser",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-26-5",
+    "controlName": "INFRA-26",
+    "expectedAction": "Xvfb environment verified cleanly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-27-1",
+    "controlName": "INFRA-27",
+    "expectedAction": "Step 000 screenshot generated",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-27-2",
+    "controlName": "INFRA-27",
+    "expectedAction": "Step 001 screenshot generated",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-27-3",
+    "controlName": "INFRA-27",
+    "expectedAction": "Step 002 screenshot generated",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-27-4",
+    "controlName": "INFRA-27",
+    "expectedAction": "Step 003 screenshot generated",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-27-5",
+    "controlName": "INFRA-27",
+    "expectedAction": "Sequence 004-007 completed",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-28-1",
+    "controlName": "INFRA-28",
+    "expectedAction": "SHA256 digest engine calculated",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-28-2",
+    "controlName": "INFRA-28",
+    "expectedAction": "SHA256 hex string length equals 64",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-28-3",
+    "controlName": "INFRA-28",
+    "expectedAction": "Hashes logged in manifest.json",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-28-4",
+    "controlName": "INFRA-28",
+    "expectedAction": "Cryptographic verification reproducible",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-28-5",
+    "controlName": "INFRA-28",
+    "expectedAction": "Zero checksum corruption confirmed",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-29-1",
+    "controlName": "INFRA-29",
+    "expectedAction": "HTML report generator initialized",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-29-2",
+    "controlName": "INFRA-29",
+    "expectedAction": "Report embeds images as data:image/png;base64",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-29-3",
+    "controlName": "INFRA-29",
+    "expectedAction": "Report self-contained without external assets",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-29-4",
+    "controlName": "INFRA-29",
+    "expectedAction": "Report includes execution summary metrics",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-29-5",
+    "controlName": "INFRA-29",
+    "expectedAction": "Report opens cleanly in browser",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-30-1",
+    "controlName": "INFRA-30",
+    "expectedAction": "Live dashboard server online on port 49160",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-30-2",
+    "controlName": "INFRA-30",
+    "expectedAction": "GET /live returns HTML feed page",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-30-3",
+    "controlName": "INFRA-30",
+    "expectedAction": "GET /current.jpg serves screenshot stream",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-30-4",
+    "controlName": "INFRA-30",
+    "expectedAction": "GET /events returns ndjson event stream",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-30-5",
+    "controlName": "INFRA-30",
+    "expectedAction": "Dashboard server routes responsive",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-31-1",
+    "controlName": "INFRA-31",
+    "expectedAction": "PJe mock server active on port 49155",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-31-2",
+    "controlName": "INFRA-31",
+    "expectedAction": "GET /painel-tarefas-tabela.html returns 200 OK",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-31-3",
+    "controlName": "INFRA-31",
+    "expectedAction": "GET /pje-com-iframe.html returns outer frame",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-31-4",
+    "controlName": "INFRA-31",
+    "expectedAction": "Content-Type headers set correctly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-31-5",
+    "controlName": "INFRA-31",
+    "expectedAction": "Mock fixture server socket reusable",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-32-1",
+    "controlName": "INFRA-32",
+    "expectedAction": "dist/manifest.json compiled",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-32-2",
+    "controlName": "INFRA-32",
+    "expectedAction": "dist/src/content/bootstrap.js IIFE bundle built",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-32-3",
+    "controlName": "INFRA-32",
+    "expectedAction": "dist/src/background/service-worker.js ES bundle built",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-32-4",
+    "controlName": "INFRA-32",
+    "expectedAction": "dist/src/popup/popup.html built",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-32-5",
+    "controlName": "INFRA-32",
+    "expectedAction": "dist/src/options/options.html built",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-33-1",
+    "controlName": "INFRA-33",
+    "expectedAction": "EXTENSION_TEST_INVENTORY.md file exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-33-2",
+    "controlName": "INFRA-33",
+    "expectedAction": "Inventory doc lists 35 features",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-33-3",
+    "controlName": "INFRA-33",
+    "expectedAction": "Inventory doc maps tier requirements",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-33-4",
+    "controlName": "INFRA-33",
+    "expectedAction": "Inventory doc defines assertion thresholds",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-33-5",
+    "controlName": "INFRA-33",
+    "expectedAction": "Doc structure matches specification",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-34-1",
+    "controlName": "INFRA-34",
+    "expectedAction": "EXTENSION_VALIDATION_REPORT.md file exists",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-34-2",
+    "controlName": "INFRA-34",
+    "expectedAction": "Validation report documents test execution",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-34-3",
+    "controlName": "INFRA-34",
+    "expectedAction": "Validation report captures environment details",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-34-4",
+    "controlName": "INFRA-34",
+    "expectedAction": "Validation report lists screenshot evidence",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-34-5",
+    "controlName": "INFRA-34",
+    "expectedAction": "Validation summary reports 100% pass status",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-35-1",
+    "controlName": "INFRA-35",
+    "expectedAction": "Remote repo configured for pje-maestro",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-35-2",
+    "controlName": "INFRA-35",
+    "expectedAction": "Git working directory status clean",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-35-3",
+    "controlName": "INFRA-35",
+    "expectedAction": "Test suite specs tracked in repository",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-35-4",
+    "controlName": "INFRA-35",
+    "expectedAction": "Release tags mapped to version 0.1.0",
+    "result": "PASSED"
+  },
+  {
+    "id": "T1-35-5",
+    "controlName": "INFRA-35",
+    "expectedAction": "Remote GitHub sync pipeline verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-01-1",
+    "controlName": "CTRL-TB-01-BND",
+    "expectedAction": "Reorder on already-ordered table completes safely",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-01-2",
+    "controlName": "CTRL-TB-01-BND",
+    "expectedAction": "Rapid double click reorder handles state cleanly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-01-3",
+    "controlName": "CTRL-TB-01-BND",
+    "expectedAction": "Reorder handles missing score elements gracefully",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-01-4",
+    "controlName": "CTRL-TB-01-BND",
+    "expectedAction": "Reorder maintains stable sort for identical scores",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-01-5",
+    "controlName": "CTRL-TB-01-BND",
+    "expectedAction": "Reorder boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555540109-t2-01-reorder-boundary.png"
+  },
+  {
+    "id": "T2-02-1",
+    "controlName": "CTRL-TB-02-BND",
+    "expectedAction": "Rapid toggling overdue filter (5x) handles state without crash",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-02-2",
+    "controlName": "CTRL-TB-02-BND",
+    "expectedAction": "Overdue filter on zero overdue items displays zero rows",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-02-3",
+    "controlName": "CTRL-TB-02-BND",
+    "expectedAction": "Overdue filter on all overdue items keeps all rows visible",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-02-4",
+    "controlName": "CTRL-TB-02-BND",
+    "expectedAction": "Overdue filter with invalid date format in DOM ignores corrupt row",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-02-5",
+    "controlName": "CTRL-TB-02-BND",
+    "expectedAction": "Overdue boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555540487-t2-02-overdue-boundary.png"
+  },
+  {
+    "id": "T2-03-1",
+    "controlName": "CTRL-TB-03-BND",
+    "expectedAction": "Rapid open next process calls handle cleanly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-03-2",
+    "controlName": "CTRL-TB-03-BND",
+    "expectedAction": "Open next on empty queue does not throw exception",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-03-3",
+    "controlName": "CTRL-TB-03-BND",
+    "expectedAction": "Open next with missing target link logs warning safely",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-03-4",
+    "controlName": "CTRL-TB-03-BND",
+    "expectedAction": "Open next with zero score item selects valid row",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-03-5",
+    "controlName": "CTRL-TB-03-BND",
+    "expectedAction": "Next process boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555540866-t2-03-next-boundary.png"
+  },
+  {
+    "id": "T2-04-1",
+    "controlName": "CTRL-TB-04-BND",
+    "expectedAction": "Restore order before reordering handles original DOM order",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-04-2",
+    "controlName": "CTRL-TB-04-BND",
+    "expectedAction": "Repeated restore clicks do not distort table structure",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-04-3",
+    "controlName": "CTRL-TB-04-BND",
+    "expectedAction": "Restore order handles dynamically removed rows",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-04-4",
+    "controlName": "CTRL-TB-04-BND",
+    "expectedAction": "Restore order preserves original table attributes",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-04-5",
+    "controlName": "CTRL-TB-04-BND",
+    "expectedAction": "Restore order boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555541233-t2-04-restore-boundary.png"
+  },
+  {
+    "id": "T2-05-1",
+    "controlName": "CTRL-TB-05-BND",
+    "expectedAction": "CSV export with special characters in CNJ escapes quotes correctly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-05-2",
+    "controlName": "CTRL-TB-05-BND",
+    "expectedAction": "CSV export on empty process list outputs header only",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-05-3",
+    "controlName": "CTRL-TB-05-BND",
+    "expectedAction": "CSV export handles UTF-8 unicode priority notes",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-05-4",
+    "controlName": "CTRL-TB-05-BND",
+    "expectedAction": "Rapid CSV export clicks do not leak DOM blob URLs",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-05-5",
+    "controlName": "CTRL-TB-05-BND",
+    "expectedAction": "CSV export boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555541295-t2-05-csv-boundary.png"
+  },
+  {
+    "id": "T2-06-1",
+    "controlName": "CTRL-TB-06-BND",
+    "expectedAction": "Rapid toggle drawer (10x) maintains binary open state",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-06-2",
+    "controlName": "CTRL-TB-06-BND",
+    "expectedAction": "Toggle drawer on small viewport (320px) adjusts layout",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-06-3",
+    "controlName": "CTRL-TB-06-BND",
+    "expectedAction": "Toggle drawer handles missing drawer node safely",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-06-4",
+    "controlName": "CTRL-TB-06-BND",
+    "expectedAction": "Toggle drawer preserves drawer internal scroll position",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-06-5",
+    "controlName": "CTRL-TB-06-BND",
+    "expectedAction": "Drawer boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555541696-t2-06-drawer-boundary.png"
+  },
+  {
+    "id": "T2-07-1",
+    "controlName": "CTRL-DW-01-BND",
+    "expectedAction": "Close drawer when already closed maintains closed state",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-07-2",
+    "controlName": "CTRL-DW-01-BND",
+    "expectedAction": "Close drawer handles rapid clicking without animation freeze",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-07-3",
+    "controlName": "CTRL-DW-01-BND",
+    "expectedAction": "Close drawer resets active focus away from input",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-07-4",
+    "controlName": "CTRL-DW-01-BND",
+    "expectedAction": "Close drawer leaves search input value intact for re-open",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-07-5",
+    "controlName": "CTRL-DW-01-BND",
+    "expectedAction": "Close drawer boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555542284-t2-07-close-boundary.png"
+  },
+  {
+    "id": "T2-08-1",
+    "controlName": "CTRL-DW-02-BND",
+    "expectedAction": "Non-existent search term displays zero cards",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-08-2",
+    "controlName": "CTRL-DW-02-BND",
+    "expectedAction": "Regex meta-characters search handled without crash",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-08-3",
+    "controlName": "CTRL-DW-02-BND",
+    "expectedAction": "Whitespace-only search query displays all cards",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-08-4",
+    "controlName": "CTRL-DW-02-BND",
+    "expectedAction": "Case-insensitive search query matching confirmed",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-08-5",
+    "controlName": "CTRL-DW-02-BND",
+    "expectedAction": "Search boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555543871-t2-08-search-boundary.png"
+  },
+  {
+    "id": "T2-09-1",
+    "controlName": "CTRL-DW-03-BND",
+    "expectedAction": "Status filter concluído executed safely",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-09-2",
+    "controlName": "CTRL-DW-03-BND",
+    "expectedAction": "Status filter reset to all restores list",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-09-3",
+    "controlName": "CTRL-DW-03-BND",
+    "expectedAction": "Rapid status filter switching handled cleanly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-09-4",
+    "controlName": "CTRL-DW-03-BND",
+    "expectedAction": "Status filter with empty queue shows empty state",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-09-5",
+    "controlName": "CTRL-DW-03-BND",
+    "expectedAction": "Status boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555545553-t2-09-status-boundary.png"
+  },
+  {
+    "id": "T2-10-1",
+    "controlName": "CTRL-DW-04-BND",
+    "expectedAction": "Setting past date (1970-01-01) computes extreme overdue score",
+    "result": "FAILED"
+  },
+  {
+    "id": "T2-10-2",
+    "controlName": "CTRL-DW-04-BND",
+    "expectedAction": "Setting far future date (2099-12-31) computes zero overdue score",
+    "result": "FAILED"
+  },
+  {
+    "id": "T2-10-3",
+    "controlName": "CTRL-DW-04-BND",
+    "expectedAction": "Clearing deadline input resets local deadline metadata",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-10-4",
+    "controlName": "CTRL-DW-04-BND",
+    "expectedAction": "Invalid date string input fallback handled without exception",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-10-5",
+    "controlName": "CTRL-DW-04-BND",
+    "expectedAction": "Deadline boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555548048-t2-10-deadline-boundary.png"
+  },
+  {
+    "id": "T2-11-1",
+    "controlName": "CTRL-DW-05-BND",
+    "expectedAction": "Priority baixa reduces process score weight",
+    "result": "FAILED"
+  },
+  {
+    "id": "T2-11-2",
+    "controlName": "CTRL-DW-05-BND",
+    "expectedAction": "Priority media sets baseline priority score",
+    "result": "FAILED"
+  },
+  {
+    "id": "T2-11-3",
+    "controlName": "CTRL-DW-05-BND",
+    "expectedAction": "Rapid priority switching preserves last selected value",
+    "result": "FAILED"
+  },
+  {
+    "id": "T2-11-4",
+    "controlName": "CTRL-DW-05-BND",
+    "expectedAction": "Unrecognized priority fallback defaults to media",
+    "result": "FAILED"
+  },
+  {
+    "id": "T2-11-5",
+    "controlName": "CTRL-DW-05-BND",
+    "expectedAction": "Priority boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555549720-t2-11-priority-boundary.png"
+  },
+  {
+    "id": "T2-12-1",
+    "controlName": "CTRL-MD-01-BND",
+    "expectedAction": "HTML script tags in note treated as raw string text without script execution",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-12-2",
+    "controlName": "CTRL-MD-01-BND",
+    "expectedAction": "10,000 character note string accommodated in textarea",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-12-3",
+    "controlName": "CTRL-MD-01-BND",
+    "expectedAction": "Empty initial note opens empty note editor",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-12-4",
+    "controlName": "CTRL-MD-01-BND",
+    "expectedAction": "Opening modal when already open replaces prior modal instance",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-12-5",
+    "controlName": "CTRL-MD-01-BND",
+    "expectedAction": "Modal note input boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555550008-t2-12-modal-input-boundary.png"
+  },
+  {
+    "id": "T2-13-1",
+    "controlName": "CTRL-MD-02-BND",
+    "expectedAction": "Saving note with empty text clears saved note metadata",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-13-2",
+    "controlName": "CTRL-MD-02-BND",
+    "expectedAction": "Saving note preserves multiline newline formatting",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-13-3",
+    "controlName": "CTRL-MD-02-BND",
+    "expectedAction": "Rapid save button clicking executes single save callback",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-13-4",
+    "controlName": "CTRL-MD-02-BND",
+    "expectedAction": "Save note under full local storage quota handles storage bounds",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-13-5",
+    "controlName": "CTRL-MD-02-BND",
+    "expectedAction": "Modal save boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555550283-t2-13-modal-save-boundary.png"
+  },
+  {
+    "id": "T2-14-1",
+    "controlName": "CTRL-MD-03-BND",
+    "expectedAction": "Canceling modal after typing discards dirty input edits",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-14-2",
+    "controlName": "CTRL-MD-03-BND",
+    "expectedAction": "Canceling modal via backdrop click closes modal panel",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-14-3",
+    "controlName": "CTRL-MD-03-BND",
+    "expectedAction": "Canceling modal via ESC key removes modal element",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-14-4",
+    "controlName": "CTRL-MD-03-BND",
+    "expectedAction": "Rapid cancel button clicks do not throw DOM exceptions",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-14-5",
+    "controlName": "CTRL-MD-03-BND",
+    "expectedAction": "Modal cancel boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555550342-t2-14-modal-cancel-boundary.png"
+  },
+  {
+    "id": "T2-15-1",
+    "controlName": "CTRL-OP-01-BND",
+    "expectedAction": "Clearing empty audit logs completes successfully",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-15-2",
+    "controlName": "CTRL-OP-01-BND",
+    "expectedAction": "Repeated clear log clicks maintain empty log array",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-15-3",
+    "controlName": "CTRL-OP-01-BND",
+    "expectedAction": "Status notification persists after repeated clears",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-15-4",
+    "controlName": "CTRL-OP-01-BND",
+    "expectedAction": "Options page storage error fallback handled cleanly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-15-5",
+    "controlName": "CTRL-OP-01-BND",
+    "expectedAction": "Options clear logs boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555551266-t2-15-options-boundary.png"
+  },
+  {
+    "id": "T2-16-1",
+    "controlName": "CTRL-BG-01-BND",
+    "expectedAction": "Score badge on score 0 displays Score: 0",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-16-2",
+    "controlName": "CTRL-BG-01-BND",
+    "expectedAction": "Score badge on score 999 displays Score: 999",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-16-3",
+    "controlName": "CTRL-BG-01-BND",
+    "expectedAction": "Score badge positioning handles narrow process table cells",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-16-4",
+    "controlName": "CTRL-BG-01-BND",
+    "expectedAction": "Score badge updates when underlying metadata changes",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-16-5",
+    "controlName": "CTRL-BG-01-BND",
+    "expectedAction": "Score badge boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555551864-t2-16-badge-boundary.png"
+  },
+  {
+    "id": "T2-17-1",
+    "controlName": "CTRL-BG-02-BND",
+    "expectedAction": "Overdue badge on 1 day overdue displays Vencido há 1 dia",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-17-2",
+    "controlName": "CTRL-BG-02-BND",
+    "expectedAction": "Overdue badge on 365 days overdue displays 365 dias",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-17-3",
+    "controlName": "CTRL-BG-02-BND",
+    "expectedAction": "Overdue badge removes when deadline updated to future date",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-17-4",
+    "controlName": "CTRL-BG-02-BND",
+    "expectedAction": "Overdue badge handles invalid date fallback safely",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-17-5",
+    "controlName": "CTRL-BG-02-BND",
+    "expectedAction": "Overdue badge boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555551926-t2-17-overdue-badge-boundary.png"
+  },
+  {
+    "id": "T2-18-1",
+    "controlName": "CTRL-BG-03-BND",
+    "expectedAction": "Today badge identifies exact current date string",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-18-2",
+    "controlName": "CTRL-BG-03-BND",
+    "expectedAction": "Today badge style distinguishes from overdue badge",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-18-3",
+    "controlName": "CTRL-BG-03-BND",
+    "expectedAction": "Today badge clears when date changes to tomorrow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-18-4",
+    "controlName": "CTRL-BG-03-BND",
+    "expectedAction": "Today badge handles timezone variations safely",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-18-5",
+    "controlName": "CTRL-BG-03-BND",
+    "expectedAction": "Today badge boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555551995-t2-18-today-badge-boundary.png"
+  },
+  {
+    "id": "T2-19-1",
+    "controlName": "CTRL-POPUP-01-BND",
+    "expectedAction": "Popup reorder click when active tab is non-PJe site handles missing target tab safely",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-19-2",
+    "controlName": "CTRL-POPUP-01-BND",
+    "expectedAction": "Rapid popup reorder clicks (5x in 100ms) throttled safely",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-19-3",
+    "controlName": "CTRL-POPUP-01-BND",
+    "expectedAction": "Popup reorder button hover state CSS verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-19-4",
+    "controlName": "CTRL-POPUP-01-BND",
+    "expectedAction": "Popup reorder click logs event without error",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-19-5",
+    "controlName": "CTRL-POPUP-01-BND",
+    "expectedAction": "Popup reorder boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555552636-t2-19-popup-reorder-boundary.png"
+  },
+  {
+    "id": "T2-20-1",
+    "controlName": "CTRL-POPUP-02-BND",
+    "expectedAction": "Popup overdue filter rapid toggling handled cleanly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-20-2",
+    "controlName": "CTRL-POPUP-02-BND",
+    "expectedAction": "Popup overdue filter maintains status badge count",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-20-3",
+    "controlName": "CTRL-POPUP-02-BND",
+    "expectedAction": "Popup overdue filter when tab closed does not crash popup context",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-20-4",
+    "controlName": "CTRL-POPUP-02-BND",
+    "expectedAction": "Popup overdue filter button active state styling verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-20-5",
+    "controlName": "CTRL-POPUP-02-BND",
+    "expectedAction": "Popup overdue boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555552682-t2-20-popup-overdue-boundary.png"
+  },
+  {
+    "id": "T2-21-1",
+    "controlName": "CTRL-POPUP-03-BND",
+    "expectedAction": "Popup next process click when process list is empty executes safely",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-21-2",
+    "controlName": "CTRL-POPUP-03-BND",
+    "expectedAction": "Popup next process rapid click idempotency verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-21-3",
+    "controlName": "CTRL-POPUP-03-BND",
+    "expectedAction": "Popup next process button CSS transition active",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-21-4",
+    "controlName": "CTRL-POPUP-03-BND",
+    "expectedAction": "Popup next process sends action message correctly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-21-5",
+    "controlName": "CTRL-POPUP-03-BND",
+    "expectedAction": "Popup next boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555552727-t2-21-popup-next-boundary.png"
+  },
+  {
+    "id": "T2-22-1",
+    "controlName": "CTRL-POPUP-04-BND",
+    "expectedAction": "Popup toggle drawer when drawer already open toggles closed",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-22-2",
+    "controlName": "CTRL-POPUP-04-BND",
+    "expectedAction": "Popup toggle drawer rapid click state consistency verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-22-3",
+    "controlName": "CTRL-POPUP-04-BND",
+    "expectedAction": "Popup toggle drawer button active feedback styling verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-22-4",
+    "controlName": "CTRL-POPUP-04-BND",
+    "expectedAction": "Popup toggle drawer sends message payload reliably",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-22-5",
+    "controlName": "CTRL-POPUP-04-BND",
+    "expectedAction": "Popup drawer boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555552777-t2-22-popup-drawer-boundary.png"
+  },
+  {
+    "id": "T2-23-1",
+    "controlName": "CTRL-POPUP-05-BND",
+    "expectedAction": "Popup CSV export on empty active tab dataset handles fallback",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-23-2",
+    "controlName": "CTRL-POPUP-05-BND",
+    "expectedAction": "Popup CSV export rapid click handling verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-23-3",
+    "controlName": "CTRL-POPUP-05-BND",
+    "expectedAction": "Popup CSV button label integrity verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-23-4",
+    "controlName": "CTRL-POPUP-05-BND",
+    "expectedAction": "Popup CSV message dispatch error handling clean",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-23-5",
+    "controlName": "CTRL-POPUP-05-BND",
+    "expectedAction": "Popup CSV boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555552826-t2-23-popup-csv-boundary.png"
+  },
+  {
+    "id": "T2-24-1",
+    "controlName": "CTRL-POPUP-06-BND",
+    "expectedAction": "Popup options button click when openOptionsPage missing uses window.open fallback",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-24-2",
+    "controlName": "CTRL-POPUP-06-BND",
+    "expectedAction": "Popup options button repeated clicks open single options tab",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-24-3",
+    "controlName": "CTRL-POPUP-06-BND",
+    "expectedAction": "Popup options icon rendering verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-24-4",
+    "controlName": "CTRL-POPUP-06-BND",
+    "expectedAction": "Popup options link path resolves to src/options/options.html",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-24-5",
+    "controlName": "CTRL-POPUP-06-BND",
+    "expectedAction": "Popup options boundary screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555552877-t2-24-popup-options-boundary.png"
+  },
+  {
+    "id": "T2-25-1",
+    "controlName": "CTRL-POPUP-PING-BND",
+    "expectedAction": "Rapid 10x SW pinging handles high frequency messages cleanly",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-25-2",
+    "controlName": "CTRL-POPUP-PING-BND",
+    "expectedAction": "SW status element displays updated status",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-25-3",
+    "controlName": "CTRL-POPUP-PING-BND",
+    "expectedAction": "Ping button remains responsive during continuous pings",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-25-4",
+    "controlName": "CTRL-POPUP-PING-BND",
+    "expectedAction": "Service worker message channel buffer clean",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-25-5",
+    "controlName": "CTRL-POPUP-PING-BND",
+    "expectedAction": "Ping SW boundary evidence captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555553546-t2-25-popup-ping-boundary.png"
+  },
+  {
+    "id": "T2-26-1",
+    "controlName": "INFRA-26-BND",
+    "expectedAction": "Xvfb display buffer recovers after window resize",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-26-2",
+    "controlName": "INFRA-26-BND",
+    "expectedAction": "Browser viewport adjustments within 768px-1920px bounds verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-26-3",
+    "controlName": "INFRA-26-BND",
+    "expectedAction": "Headed Chrome process memory overhead remains bounded under 500MB",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-26-4",
+    "controlName": "INFRA-26-BND",
+    "expectedAction": "Xvfb clean SIGTERM handle teardown verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-26-5",
+    "controlName": "INFRA-26-BND",
+    "expectedAction": "Xvfb lockfile cleanup verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-27-1",
+    "controlName": "INFRA-27-BND",
+    "expectedAction": "Step 000 screenshot captured on slow DOM load",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-27-2",
+    "controlName": "INFRA-27-BND",
+    "expectedAction": "Step 001 screenshot captured on injected shadow DOM toolbar",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-27-3",
+    "controlName": "INFRA-27-BND",
+    "expectedAction": "Step 002 screenshot captured with open drawer overlay",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-27-4",
+    "controlName": "INFRA-27-BND",
+    "expectedAction": "Step 003 screenshot captured with active search query text",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-27-5",
+    "controlName": "INFRA-27-BND",
+    "expectedAction": "Step sequence zero-padding format 000-007 strictly enforced",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-28-1",
+    "controlName": "INFRA-28-BND",
+    "expectedAction": "SHA256 of empty payload returns known digest e3b0c442...",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-28-2",
+    "controlName": "INFRA-28-BND",
+    "expectedAction": "SHA256 computation on 1MB screenshot payload completes under 5ms",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-28-3",
+    "controlName": "INFRA-28-BND",
+    "expectedAction": "SHA256 checksum mismatch detection triggers verification error",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-28-4",
+    "controlName": "INFRA-28-BND",
+    "expectedAction": "Manifest SHA256 mapping corresponds to exact file contents",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-28-5",
+    "controlName": "INFRA-28-BND",
+    "expectedAction": "SHA256 lowercase hex string format enforced",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-29-1",
+    "controlName": "INFRA-29-BND",
+    "expectedAction": "HTML report embedding 0 screenshots outputs empty state section",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-29-2",
+    "controlName": "INFRA-29-BND",
+    "expectedAction": "HTML report embedding 50 screenshots stays below 20MB file limit",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-29-3",
+    "controlName": "INFRA-29-BND",
+    "expectedAction": "Base64 data URI headers formatted as data:image/png;base64,",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-29-4",
+    "controlName": "INFRA-29-BND",
+    "expectedAction": "Report HTML string sanitizes embedded JSON script tags",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-29-5",
+    "controlName": "INFRA-29-BND",
+    "expectedAction": "Report layout remains responsive across screen sizes",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-30-1",
+    "controlName": "INFRA-30-BND",
+    "expectedAction": "Live dashboard server receiving 50 req/sec handles load without error",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-30-2",
+    "controlName": "INFRA-30-BND",
+    "expectedAction": "GET /invalid-route returns HTTP 404 Not Found",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-30-3",
+    "controlName": "INFRA-30-BND",
+    "expectedAction": "GET /current.jpg when screenshot missing returns HTTP 404 fallback",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-30-4",
+    "controlName": "INFRA-30-BND",
+    "expectedAction": "GET /events when no events recorded returns waiting message",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-30-5",
+    "controlName": "INFRA-30-BND",
+    "expectedAction": "Live server response headers include Cache-Control no-cache",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-31-1",
+    "controlName": "INFRA-31-BND",
+    "expectedAction": "Fixtures server request for non-existent file returns 404 Not Found",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-31-2",
+    "controlName": "INFRA-31-BND",
+    "expectedAction": "Fixtures server directory traversal request (/../..) safely blocked",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-31-3",
+    "controlName": "INFRA-31-BND",
+    "expectedAction": "Fixtures server auto-appends .html extension when omitted",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-31-4",
+    "controlName": "INFRA-31-BND",
+    "expectedAction": "Fixtures server handles concurrent HTTP GET requests safely",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-31-5",
+    "controlName": "INFRA-31-BND",
+    "expectedAction": "Fixtures server socket cleanup allows instant port re-binding",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-32-1",
+    "controlName": "INFRA-32-BND",
+    "expectedAction": "Extension dist folder contains required subdirectories",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-32-2",
+    "controlName": "INFRA-32-BND",
+    "expectedAction": "Content script bootstrap.js IIFE wrapper present",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-32-3",
+    "controlName": "INFRA-32-BND",
+    "expectedAction": "Service worker JS uses ES module syntax",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-32-4",
+    "controlName": "INFRA-32-BND",
+    "expectedAction": "Popup HTML links to relative popup CSS bundle",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-32-5",
+    "controlName": "INFRA-32-BND",
+    "expectedAction": "Manifest MV3 permissions include storage and activeTab",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-33-1",
+    "controlName": "INFRA-33-BND",
+    "expectedAction": "EXTENSION_TEST_INVENTORY.md table columns correctly structured",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-33-2",
+    "controlName": "INFRA-33-BND",
+    "expectedAction": "Test inventory doc lists 35 numbered features",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-33-3",
+    "controlName": "INFRA-33-BND",
+    "expectedAction": "Test inventory doc maps all 4 tiers (Tier 1-4)",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-33-4",
+    "controlName": "INFRA-33-BND",
+    "expectedAction": "Inventory doc threshold specifies 390+ test assertions",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-33-5",
+    "controlName": "INFRA-33-BND",
+    "expectedAction": "Inventory markdown document valid",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-34-1",
+    "controlName": "INFRA-34-BND",
+    "expectedAction": "EXTENSION_VALIDATION_REPORT.md structure includes summary header",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-34-2",
+    "controlName": "INFRA-34-BND",
+    "expectedAction": "Validation report documents environment software versions",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-34-3",
+    "controlName": "INFRA-34-BND",
+    "expectedAction": "Validation report records evidence screenshot paths",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-34-4",
+    "controlName": "INFRA-34-BND",
+    "expectedAction": "Validation report logs test suite pass rates",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-34-5",
+    "controlName": "INFRA-34-BND",
+    "expectedAction": "Validation report markdown syntax valid",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-35-1",
+    "controlName": "INFRA-35-BND",
+    "expectedAction": "Remote repo URL points to github.com/Pedro31051/pje-maestro.git",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-35-2",
+    "controlName": "INFRA-35-BND",
+    "expectedAction": "Git status check reports no untracked build artifacts",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-35-3",
+    "controlName": "INFRA-35-BND",
+    "expectedAction": "Git commit history includes test suite commits",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-35-4",
+    "controlName": "INFRA-35-BND",
+    "expectedAction": "Git tags conform to semantic versioning v0.1.0",
+    "result": "PASSED"
+  },
+  {
+    "id": "T2-35-5",
+    "controlName": "INFRA-35-BND",
+    "expectedAction": "GitHub remote repository synchronization status verified",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-01",
+    "controlName": "PAIRWISE-01",
+    "expectedAction": "Reorder + Overdue filter combined execution",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-02",
+    "controlName": "PAIRWISE-02",
+    "expectedAction": "Drawer toggle + deadline change + reorder + restore order cycle",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-03",
+    "controlName": "PAIRWISE-03",
+    "expectedAction": "Priority update + note save + CSV export workflow",
+    "result": "FAILED"
+  },
+  {
+    "id": "T3-04",
+    "controlName": "PAIRWISE-04",
+    "expectedAction": "Popup reorder + SW ping + open options workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-05",
+    "controlName": "PAIRWISE-05",
+    "expectedAction": "DOM badges + search + status + open next workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-06",
+    "controlName": "PAIRWISE-06",
+    "expectedAction": "Reorder + Open Next + CSV Export workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-07",
+    "controlName": "PAIRWISE-07",
+    "expectedAction": "Overdue Filter + Status Filter + Priority Update workflow",
+    "result": "FAILED"
+  },
+  {
+    "id": "T3-08",
+    "controlName": "PAIRWISE-08",
+    "expectedAction": "Local Deadline + Status Filter + Note Save workflow",
+    "result": "FAILED"
+  },
+  {
+    "id": "T3-09",
+    "controlName": "PAIRWISE-09",
+    "expectedAction": "Restore Order + Search Query + Popup Sync workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-10",
+    "controlName": "PAIRWISE-10",
+    "expectedAction": "Priority Update + Overdue Filter + Restore Order workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-11",
+    "controlName": "PAIRWISE-11",
+    "expectedAction": "Drawer Search + Status Filter + Clear Logs workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-12",
+    "controlName": "PAIRWISE-12",
+    "expectedAction": "Popup Overdue Filter + Target Tab Badge Render workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-13",
+    "controlName": "PAIRWISE-13",
+    "expectedAction": "Popup Toggle Drawer + Drawer Close Control workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-14",
+    "controlName": "PAIRWISE-14",
+    "expectedAction": "Popup Next Process + Open Next Highlight workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-15",
+    "controlName": "PAIRWISE-15",
+    "expectedAction": "Popup CSV Export + Local Storage Persistence workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-16",
+    "controlName": "PAIRWISE-16",
+    "expectedAction": "Score Badge Invalidation + Local Priority Update workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-17",
+    "controlName": "PAIRWISE-17",
+    "expectedAction": "Overdue Badge Display + Local Deadline Setting workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-18",
+    "controlName": "PAIRWISE-18",
+    "expectedAction": "Today Badge Display + Current Date Deadline Setting workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-19",
+    "controlName": "PAIRWISE-19",
+    "expectedAction": "Search Query + Clear Search + Reorder workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-20",
+    "controlName": "PAIRWISE-20",
+    "expectedAction": "Modal Note Input + Modal Cancel + Modal Save workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-21",
+    "controlName": "PAIRWISE-21",
+    "expectedAction": "Rapid Reorder + Rapid Overdue Toggle workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-22",
+    "controlName": "PAIRWISE-22",
+    "expectedAction": "High Volume Search + Status Filter workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-23",
+    "controlName": "PAIRWISE-23",
+    "expectedAction": "Multi-tab Popup Sync + Service Worker Ping workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-24",
+    "controlName": "PAIRWISE-24",
+    "expectedAction": "Options Clear Logs + Audit Log Storage Verification workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-25",
+    "controlName": "PAIRWISE-25",
+    "expectedAction": "Iframe Adapter Navigation + Shadow DOM Injection workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-26",
+    "controlName": "PAIRWISE-26",
+    "expectedAction": "Headed Xvfb Viewport Resize + Toolbar Re-render workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-27",
+    "controlName": "PAIRWISE-27",
+    "expectedAction": "Numeric Screenshot Capture Sequence workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-28",
+    "controlName": "PAIRWISE-28",
+    "expectedAction": "SHA256 Checksum Calculation workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-29",
+    "controlName": "PAIRWISE-29",
+    "expectedAction": "Base64 HTML Report Data Generator Verification workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-30",
+    "controlName": "PAIRWISE-30",
+    "expectedAction": "Live Telemetry Dashboard Stream Handshake workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-31",
+    "controlName": "PAIRWISE-31",
+    "expectedAction": "Mock PJe Fixture Server Route Handshake workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-32",
+    "controlName": "PAIRWISE-32",
+    "expectedAction": "Extension Production Build Bundle Asset Handshake workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-33",
+    "controlName": "PAIRWISE-33",
+    "expectedAction": "Test Inventory Matrix Mapping Verification workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-34",
+    "controlName": "PAIRWISE-34",
+    "expectedAction": "Validation Report Document Structure Verification workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-35",
+    "controlName": "PAIRWISE-35",
+    "expectedAction": "Remote GitHub Repository Tracking Handshake workflow",
+    "result": "PASSED"
+  },
+  {
+    "id": "T3-SUMMARY",
+    "controlName": "PAIRWISE-SUMMARY",
+    "expectedAction": "Pairwise suite screenshot captured",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555571970-t3-pairwise-summary.png"
+  },
+  {
+    "id": "T4-SCENARIO-1",
+    "controlName": "REAL-WORLD-01",
+    "expectedAction": "PJe Legal Secret Process Priority Processing completed",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555577812-t4-scenario1-secret-process.png"
+  },
+  {
+    "id": "T4-SCENARIO-2-1",
+    "controlName": "REAL-WORLD-02",
+    "expectedAction": "Outer PJe portal loads legacy iframe element",
+    "result": "PASSED"
+  },
+  {
+    "id": "T4-SCENARIO-2-2",
+    "controlName": "REAL-WORLD-02",
+    "expectedAction": "Legacy iframe content frame loaded successfully",
+    "result": "PASSED"
+  },
+  {
+    "id": "T4-SCENARIO-2",
+    "controlName": "REAL-WORLD-02",
+    "expectedAction": "Legacy Iframe & Shadow DOM Coexistence completed",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555579033-t4-scenario2-iframe-coexistence.png"
+  },
+  {
+    "id": "T4-SCENARIO-3-1",
+    "controlName": "REAL-WORLD-03",
+    "expectedAction": "Captured visual audit step 000 screenshot",
+    "result": "PASSED"
+  },
+  {
+    "id": "T4-SCENARIO-3-2",
+    "controlName": "REAL-WORLD-03",
+    "expectedAction": "Computed SHA256 checksum for audit artifact",
+    "result": "PASSED"
+  },
+  {
+    "id": "T4-SCENARIO-3",
+    "controlName": "REAL-WORLD-03",
+    "expectedAction": "Visual Audit Pipeline Full Lifecycle completed",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555579162-t4-scenario3-visual-audit.png"
+  },
+  {
+    "id": "T4-SCENARIO-4-1",
+    "controlName": "REAL-WORLD-04",
+    "expectedAction": "High volume process table populated with 100+ rows",
+    "result": "PASSED"
+  },
+  {
+    "id": "T4-SCENARIO-4",
+    "controlName": "REAL-WORLD-04",
+    "expectedAction": "High-Volume Process Table Stress Test completed",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555580969-t4-scenario4-high-volume-stress.png"
+  },
+  {
+    "id": "T4-SCENARIO-5-1",
+    "controlName": "REAL-WORLD-05",
+    "expectedAction": "Extension bundle manifest MV3 version is 3",
+    "result": "PASSED"
+  },
+  {
+    "id": "T4-SCENARIO-5-2",
+    "controlName": "REAL-WORLD-05",
+    "expectedAction": "Manifest name is PJe Maestro",
+    "result": "PASSED"
+  },
+  {
+    "id": "T4-SCENARIO-5",
+    "controlName": "REAL-WORLD-05",
+    "expectedAction": "Extension Build & GitHub Sync Validation completed",
+    "result": "PASSED",
+    "evidenceScreenshot": "screenshots/1785555581079-t4-scenario5-build-sync.png"
   }
 ]

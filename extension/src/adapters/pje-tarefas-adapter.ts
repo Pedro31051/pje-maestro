@@ -1,4 +1,4 @@
-import { PJeAdapter, buildRecordFromElement } from './pje-base-adapter';
+import { PJeAdapter, buildRecordFromElement, safeGetText } from './pje-base-adapter';
 import { ProcessRecord, LocalMetadata } from '../core/process-record';
 import { extractCNJ } from '../core/parser-cnj';
 
@@ -33,22 +33,24 @@ export class PJeTarefasAdapter implements PJeAdapter {
     const container = this.getContainer(doc);
     if (!container) return records;
 
-    // Table rows
-    const rows = Array.from(container.querySelectorAll<HTMLElement>('tr.linha-processo, tr[data-cnj], tbody tr'));
+    // Table rows (excluding header rows with th, .table-header, or inside thead)
+    const rows = Array.from(container.querySelectorAll<HTMLElement>('tr.linha-processo, tr[data-cnj], tbody tr'))
+      .filter(row => !row.querySelector('th') && !row.classList.contains('table-header') && !row.closest('thead'));
+
     if (rows.length > 0) {
       rows.forEach((row, idx) => {
-        const text = row.innerText || '';
+        const text = safeGetText(row);
         const cnjAttr = row.getAttribute('data-cnj');
         const cnj = cnjAttr ? extractCNJ(cnjAttr) : extractCNJ(text);
 
         const taskEl = row.querySelector('.nome-tarefa, .coluna-tarefa, td:nth-child(2)');
-        const taskName = taskEl ? (taskEl as HTMLElement).innerText.trim() : 'Minhas Tarefas';
+        const taskName = taskEl ? safeGetText(taskEl) : 'Minhas Tarefas';
 
         const isPriority = text.toLowerCase().includes('prioridade') || !!row.querySelector('.badge-prioridade, .priority-icon');
 
         // Extract tags
         const tagEls = Array.from(row.querySelectorAll('.badge-etiqueta, .tag-item'));
-        const tags = tagEls.map(t => (t as HTMLElement).innerText.trim()).filter(Boolean);
+        const tags = tagEls.map(t => safeGetText(t)).filter(Boolean);
 
         // Days idle check
         const idleMatch = text.match(/(\d+)\s*dias?/i);
@@ -74,16 +76,16 @@ export class PJeTarefasAdapter implements PJeAdapter {
     // Cards layout
     const cards = Array.from(container.querySelectorAll<HTMLElement>('.card-processo, .card-item'));
     cards.forEach((card, idx) => {
-      const text = card.innerText || '';
+      const text = safeGetText(card);
       const cnjAttr = card.getAttribute('data-cnj');
       const cnj = cnjAttr ? extractCNJ(cnjAttr) : extractCNJ(text);
 
       const taskEl = card.querySelector('.card-tarefa-titulo, .header-tarefa');
-      const taskName = taskEl ? (taskEl as HTMLElement).innerText.trim() : 'Tarefa em Card';
+      const taskName = taskEl ? safeGetText(taskEl) : 'Tarefa em Card';
 
       const isPriority = text.toLowerCase().includes('prioridade') || !!card.querySelector('.badge-prioridade');
       const tagEls = Array.from(card.querySelectorAll('.badge-etiqueta, .tag'));
-      const tags = tagEls.map(t => (t as HTMLElement).innerText.trim()).filter(Boolean);
+      const tags = tagEls.map(t => safeGetText(t)).filter(Boolean);
 
       records.push(
         buildRecordFromElement(
