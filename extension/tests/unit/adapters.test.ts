@@ -51,7 +51,7 @@ describe('DOM Adapters & Resiliency Helpers', () => {
 
       expect(rec1.id).not.toContain('elem-');
       expect(rec1.id).toBe(rec2.id);
-      expect(rec1.id).toMatch(/^non-cnj-0-Minuta-\d+$/);
+      expect(rec1.id).toMatch(/^record::[a-z0-9]+$/);
     });
   });
 

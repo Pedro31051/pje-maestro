@@ -166,6 +166,40 @@
   color: #38bdf8;
 }
 
+.pje-maestro-cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pje-maestro-process-card .score-text {
+  background: #334155;
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 2px 6px;
+}
+
+.pje-maestro-process-card .task-name {
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.pje-maestro-process-card .card-controls {
+  display: grid;
+  gap: 6px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 4px;
+}
+
+.pje-maestro-process-card .card-controls .pje-maestro-input,
+.pje-maestro-process-card .card-controls .pje-maestro-select,
+.pje-maestro-process-card .card-controls .pje-maestro-btn {
+  font-size: 11px;
+  margin: 0;
+  padding: 4px;
+  width: 100%;
+}
+
 /* Badges for PJe Row Items */
 .pje-maestro-badge {
   display: inline-block;

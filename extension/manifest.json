@@ -4,14 +4,7 @@
   "version": "0.1.0",
   "description": "Camada visual para fila inteligente, prazos, filtros e tarefas locais no PJe.",
   "permissions": [
-    "storage",
-    "activeTab",
-    "scripting",
-    "alarms",
-    "notifications"
-  ],
-  "host_permissions": [
-    "<all_urls>"
+    "storage"
   ],
   "background": {
     "service_worker": "src/background/service-worker.js",
@@ -20,7 +13,9 @@
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "*://*.jus.br/*",
+        "http://localhost/*",
+        "http://127.0.0.1/*"
       ],
       "js": [
         "src/content/bootstrap.js"
@@ -35,7 +30,11 @@
   "web_accessible_resources": [
     {
       "resources": ["src/ui/styles.css"],
-      "matches": ["<all_urls>"]
+      "matches": [
+        "*://*.jus.br/*",
+        "http://localhost/*",
+        "http://127.0.0.1/*"
+      ]
     }
   ],
   "action": {

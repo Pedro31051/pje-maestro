@@ -1,21 +1,30 @@
 import { ProcessRecord } from '../core/process-record';
 import { logAudit } from '../core/audit-log';
 
+function neutralizeSpreadsheetFormula(value: string): string {
+  return /^[=+\-@\t\r]/.test(value) ? `'${value}` : value;
+}
+
+function escapeCSVValue(value: unknown): string {
+  const safeValue = neutralizeSpreadsheetFormula(String(value ?? ''));
+  return `"${safeValue.replace(/"/g, '""')}"`;
+}
+
 export function generateCSV(records: ProcessRecord[]): string {
   const headers = ['CNJ', 'Tarefa', 'Score', 'Prazo Local', 'Responsavel', 'Prioridade Legal', 'Prioridade Local', 'Status', 'Etiquetas'];
   
   const rows = records.map(r => {
-    const cnj = r.isConfidential ? '[PROCESSO SIGILOSO]' : (r.cnj || r.id);
-    const task = r.isConfidential ? '"[CONTEUDO RESERVADO]"' : `"${(r.taskName || '').replace(/"/g, '""')}"`;
-    const score = r.score;
-    const deadline = r.localMeta.localDeadline || '';
-    const assignee = r.isConfidential ? '"[RESERVADO]"' : `"${(r.localMeta.assignee || '').replace(/"/g, '""')}"`;
-    const legalPriority = r.legalPriority ? 'SIM' : 'NAO';
-    const localPriority = r.localMeta.localPriority || 'normal';
-    const status = r.localMeta.status || 'pendente';
-    const tags = r.isConfidential ? '"[SIGILO]"' : `"${([...r.tags, ...(r.localMeta.tags || [])]).join('; ')}"`;
-
-    return [cnj, task, score, deadline, assignee, legalPriority, localPriority, status, tags].join(',');
+    return [
+      r.isConfidential ? '[PROCESSO SIGILOSO]' : (r.cnj || r.id),
+      r.isConfidential ? '[CONTEUDO RESERVADO]' : r.taskName,
+      r.score,
+      r.localMeta.localDeadline || '',
+      r.isConfidential ? '[RESERVADO]' : (r.localMeta.assignee || ''),
+      r.legalPriority ? 'SIM' : 'NAO',
+      r.localMeta.localPriority || 'normal',
+      r.localMeta.status || 'pendente',
+      r.isConfidential ? '[SIGILO]' : [...r.tags, ...(r.localMeta.tags || [])].join('; ')
+    ].map(escapeCSVValue).join(',');
   });
 
   return [headers.join(','), ...rows].join('\n');

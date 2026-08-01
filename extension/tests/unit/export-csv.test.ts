@@ -25,4 +25,23 @@ describe('exportCSV', () => {
     expect(csv).toContain('"Despacho Liminar"');
     expect(csv).toContain('SIM');
   });
+
+  it('neutralizes spreadsheet formulas in text imported from the page', () => {
+    const record: ProcessRecord = {
+      id: 'formula-test',
+      cnj: null,
+      taskName: '=HYPERLINK("https://example.invalid")',
+      tags: ['@SUM(1+1)'],
+      legalPriority: false,
+      rawText: '',
+      originalIndex: 0,
+      currentURL: 'http://localhost',
+      localMeta: { assignee: '+cmd' },
+      score: 0
+    };
+    const csv = generateCSV([record]);
+    expect(csv).toContain("'=HYPERLINK");
+    expect(csv).toContain("'+cmd");
+    expect(csv).toContain("'@SUM");
+  });
 });

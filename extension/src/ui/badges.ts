@@ -19,7 +19,7 @@ export function injectRowBadges(records: ProcessRecord[]): void {
     if (!r.elementRef) return;
 
     // Clear old badges
-    r.elementRef.querySelectorAll('.pje-maestro-badge').forEach(b => b.remove());
+    r.elementRef.querySelectorAll('.pje-maestro-badge-container').forEach(b => b.remove());
 
     const badgeContainer = document.createElement('span');
     badgeContainer.className = 'pje-maestro-badge-container';
@@ -49,5 +49,12 @@ export function injectRowBadges(records: ProcessRecord[]): void {
     // Append to target element
     const targetCol = r.elementRef.querySelector('td:first-child, .card-header') || r.elementRef;
     targetCol.appendChild(badgeContainer);
+  });
+}
+
+export function applyRecordVisibility(allRecords: ProcessRecord[], visibleRecords: ProcessRecord[]): void {
+  const visibleElements = new Set(visibleRecords.map(record => record.elementRef).filter(Boolean));
+  allRecords.forEach(record => {
+    if (record.elementRef) record.elementRef.hidden = !visibleElements.has(record.elementRef);
   });
 }

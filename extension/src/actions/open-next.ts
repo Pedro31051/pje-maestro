@@ -16,9 +16,10 @@ export function executeOpenNext(records: ProcessRecord[]): ProcessRecord | null 
     nextRecord.elementRef.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
     // Try finding link inside element
-    const link = nextRecord.elementRef.querySelector<HTMLAnchorElement>('a[href], button');
-    if (link) {
-      link.focus();
+    const target = nextRecord.elementRef.querySelector<HTMLAnchorElement | HTMLButtonElement>('a[href], button:not([disabled])');
+    if (target) {
+      target.focus();
+      target.click();
     }
 
     logAudit('open_next', nextRecord.cnj || nextRecord.id);
